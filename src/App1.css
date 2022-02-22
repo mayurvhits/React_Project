@@ -1,0 +1,61 @@
+
+
+
+  
+  .App {
+    margin-top: 200px;
+  }
+  
+  .form {
+    width: 600px;
+    height: 800px;
+  
+    margin-right: 50px;
+    flex-direction: column!important;
+  }
+  
+  .button {
+    width: 600px;
+    margin-top: 20px;
+    padding: 12px !important;
+    background-color: #0f172a !important;
+    border-style: none !important;
+  }
+  
+  .span {
+    clear: blue !important;
+  }
+  
+  .p {
+    margin-top: 20px;
+    cursor: pointer !important;
+  }
+  
+  .p1 {
+    margin-top: 20px;
+    color: lightskyblue;
+    cursor: pointer !important;
+    text-decoration: none;
+  }
+  
+  .p2 {
+    color: lightskyblue;
+    cursor: pointer !important;
+    text-decoration: none;
+  }
+  
+  .placeholder {
+    padding: 10px !important;
+    background-color: rgba(240, 240, 240, 0.849) !important;
+    cursor: text !important;
+  }
+  
+  .h1 {
+    margin-bottom: 30px !important;
+    cursor: default;
+  }
+  
+  .p3{
+   cursor: pointer !important;
+   margin-left: 2px !important;
+  }

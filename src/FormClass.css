@@ -1,0 +1,179 @@
+@media only screen and (max-width: 600px) {
+  mr {
+    background-color: lightblue;
+  }
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.icon {
+  margin-left: 5px !important ;
+  background-color: white;
+}
+
+.hi {
+  width: 550px !important;
+}
+
+.yoo {
+  width: 400px;
+}
+.mr {
+  width: 1200px;
+  height: 400px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  box-shadow: 3px 3px rgb(202, 197, 197);
+  display: flex;
+
+
+  flex-direction: column !important;
+  
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.h1 {
+  font-size: medium;
+  /* width: -moz-max-content; */
+  margin-bottom: 1em;
+  justify-content: space-around !important;
+}
+
+.h9 {
+  border: 2px solid #d7dadf;
+  border-radius: 4px;
+
+  color: black !important;
+}
+
+.button2 {
+  border-radius: 4px;
+  background-color: #0f172a;
+  color: white;
+  border-style: none;
+  width: 60px;
+  padding: 4px;
+  margin-right: 700px;
+}
+
+.button1 {
+  flex: content;
+  flex-wrap: wrap;
+  margin-left: 1095px !important;
+}
+
+.navc2 {
+  width: 200px;
+  flex: content;
+}
+
+.navc {
+  align-items: flex-start;
+}
+
+.me-2 {
+  width: 40px !important;
+  padding-left: 25px;
+  background: url('https://static.thenounproject.com/png/101791-200.png')
+    no-repeat left;
+  background-size: 20px;
+}
+
+.hey {
+  flex-direction: row !important;
+  margin-left: 500px;
+}
+
+.img1 {
+  border-radius: 50%;
+}
+
+
+
+.icon1 {
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  margin-top: 4px;
+  
+}
+
+.hey2 {
+  float: left !important;
+  width: 460px;
+}
+
+.jj {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.yoo2 {
+  display: flex !important ;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon-div {
+  margin-right: 20px;
+}
+
+.yoo21{
+  margin-left: 20px;
+  width: 850px;
+  background-color: #f8f9fa;
+  padding: 21px;
+  margin-left: 5px;
+
+
+
+}
+
+.b{
+  text-decoration: none;
+  color: black;
+  margin-left: 5px;
+}
+
+.p{
+  
+  flex: content;
+  width: 50px;
+  justify-content:space-around ;
+  margin-top: 5px;
+
+}
+
+.po{
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.navbar1{
+  position: relative !important;
+}
+
+.astronaut{
+    
+  width: 120px;
+  margin: 0 5px;
+}
+
+.user{
+  margin-right: 20px;
+}
+
+.navbar1{
+  flex: content;
+  nav-up: auto;
+  
+}
+
