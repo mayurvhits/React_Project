@@ -1,57 +1,73 @@
 
-
-.flex {
-  flex: auto !important;
-}
-
-.App {
+.form{
+  margin-left: 20%;
+  margin-right: 20%;
   margin-top: 200px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 3px 2px rgb(226, 226, 226);
+  border-style: none;
 }
 
-.form {
-  width: 600px;
-  height: 800px;
+.navbar{
+ 
+  background-color: #333;
+  position: fixed;
+  margin-top: 0px !important;
+  width: 100%;
+}
 
+.link{
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  
+}
+
+.navlink, link{
+  width: 200px !important;
+  
+  flex: content !important;
+  
+  justify-content: space-around !important;
+
+}
+
+Link:hover{
+  color: yellow !important;
+}
+
+.navbrand{
+  padding: 0vw;
+}
+
+.button{
+  background-color: #212529 !important;
+  border-color: #212529 !important;
+}
+
+
+.box{
+  height: 50%;
+  margin-top: 100px;
+  margin-left: 50px;
   margin-right: 50px;
 }
 
-.button {
-  width: 600px;
-  margin-top: 20px;
-  padding: 12px !important;
-  background-color: #0f172a !important;
-  border-style: none !important;
+.img{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  z-index: -1;
 }
 
-.span {
-  clear: blue !important;
+.notes{
+  width: 700px;
+  height: 1100px;
 }
 
-.p {
-  margin-top: 20px;
-  cursor: pointer !important;
-}
 
-.p1 {
-  margin-top: 20px;
-  color: lightskyblue;
-  cursor: pointer !important;
-  text-decoration: none;
-}
 
-.p2 {
-  color: lightskyblue;
-  cursor: pointer !important;
-  text-decoration: none;
-}
+/* -------------------------------****************************************-------------------------------------- */
 
-.placeholder {
-  padding: 10px !important;
-  background-color: rgba(240, 240, 240, 0.849) !important;
-  cursor: text !important;
-}
-
-.h1 {
-  margin-bottom: 30px !important;
-  cursor: default;
-}
