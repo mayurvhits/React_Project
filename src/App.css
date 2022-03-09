@@ -86,6 +86,9 @@ Link:hover {
   padding: 10px;
   flex: 50%;
   height: 400px;
+  display: flex;
+  justify-content: center;
+    align-items: center;
 }
 
 .right {
@@ -124,6 +127,11 @@ Link:hover {
 
   justify-content: center;
   height: 380px;
+}
+
+.img1{
+  height: 300px;
+  width: 400px;
 }
 
 /* -------------------------------****************************************-------------------------------------- */

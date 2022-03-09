@@ -1,12 +1,13 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
-import Image from 'react-bootstrap/Image';
+import profile from '../assets/download.jpg';
 
 const About = () => {
   return (
     <div>
       <div className="main">
-        <div className="left"></div>
+        <div className="left">
+          <img className="download" src={profile} alt="Logo" />
+        </div>
         <div className="right">
           <div className="aboutus">
             <h4>About us</h4>
