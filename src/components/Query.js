@@ -7,10 +7,12 @@ function Query() {
       <>
         <div>
           <Form className="form">
+            <h1>Query Section</h1>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>
-                <h1>Query</h1>
+                Name
               </Form.Label>
+              
               <Form.Control type="text" placeholder="Full name" />
             </Form.Group>
 

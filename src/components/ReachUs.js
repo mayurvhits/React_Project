@@ -3,8 +3,8 @@ import {Form } from 'react-bootstrap';
 
 const Reachus = () => {
     return (
-        <div>
            <>
+        <div>
            <div className='box  '>
   <Form.Group controlId="formFile" className="mb-3">
     <Form.Label>Default file input example</Form.Label>
@@ -27,8 +27,8 @@ const Reachus = () => {
     <Form.Control type="file" size="lg" />
   </Form.Group>
   </div>
-</>
         </div>
+</>
     );
 }
 

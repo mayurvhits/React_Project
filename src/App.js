@@ -3,7 +3,7 @@ import Login from './components/Login';
 import Firstnavbar from './components/Firstnavbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Reachus from './components/ReachUs';
-import Help from './components/Help'
+import About from './components/About'
 import Background from './components/Background';
 import Query from './components/Query'
 
@@ -16,14 +16,14 @@ function App() {
         {/* <Background /> */}
 
         <Switch>
-          <Route exact path="/login">
+          <Route exact path="/Applicants">
             <Login />
           </Route>
-          <Route exact path="/About">
+          {/* <Route exact path="/About">
             <Reachus />
-            </Route>
-            <Route exact path="/help">
-              <Help />
+            </Route> */}
+            <Route exact path="/About">
+              <About />
 
             </Route>
             <Route exact path="/query">

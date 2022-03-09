@@ -6,24 +6,26 @@ function Firstnavbar() {
     <div className="navbar">
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand className='navbrand' href="#home">Welcome</Navbar.Brand>
+          {/* <Navbar.Brand className="navbrand" href="#home">
+            Welcome
+          </Navbar.Brand> */}
           <div className="navlink">
-            
-              <Link className="link" to="/login">
-                Applicants
-              </Link>
+            <h4 className='h11'>Welcome</h4>
+            <Link className="link" to="/About">
+              About us
+            </Link>
 
-              <Link className="link" to="/About">
+            <Link className="link" to="/Applicants">
+              Applicants
+            </Link>
+
+            {/* <Link className="link" to="/About">
                 Upload
-              </Link>
+              </Link> */}
 
-              <Link className="link" to="/help">
-                About
-              </Link>
-            
-              <Link className="link" to="/query">
-                query
-              </Link>
+            <Link className="link" to="/query">
+              Query
+            </Link>
           </div>
         </Container>
       </Navbar>
