@@ -1,5 +1,4 @@
-
-.form{
+.form {
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 100px;
@@ -10,75 +9,70 @@
   border-style: none;
 }
 
-.navbar{
- 
+.navbar {
   background-color: #333;
   position: fixed;
   margin-top: 0px !important;
   width: 100%;
 }
 
-.link{
+.link {
   color: white;
   text-decoration: none;
   padding: 10px;
- 
-  
 }
 
-.navlink{
+.navlink {
   width: 500px !important;
   align-items: center;
- display: flex;
-  
-  justify-content: space-around !important;
+  display: flex;
 
+  justify-content: space-around !important;
 }
 
-Link:hover{
+Link:hover {
   color: yellow !important;
 }
 
-.navbrand{
+.navbrand {
   padding: 0vw;
 }
 
-.button{
+.button {
   background-color: #212529 !important;
   border-color: #212529 !important;
 }
 
-
-.box{
+.box {
   height: 50%;
   margin-top: 100px;
   margin-left: 50px;
   margin-right: 50px;
 }
 
-.img{
+.img {
   position: absolute;
   width: 500px;
   height: 500px;
   z-index: -1;
 }
 
-.notes{
+.notes {
   width: 700px;
   height: 1100px;
 }
 
-.carousel{
+.carousel {
   height: 500px;
 }
 
-.hii{
+.hii {
   margin: 10px;
   background-color: black;
   height: 500px;
 }
 
-.footer{
+.footer {
   background-color: #212529;
   color: #212529;
   position: absolute;
@@ -87,55 +81,49 @@ Link:hover{
   height: 60px;
 }
 
-.left{
+.left {
   /* background-color: yellow; */
   padding: 10px;
   flex: 50%;
   height: 400px;
 }
 
-.right{
-
+.right {
   background-color: rgb(234, 237, 240);
   padding: 10px;
   flex: 50%;
   height: 400px;
 }
 
-.main{
+.main {
+  height: 500px;
+  margin-top: 75px;
 
-     
-     height: 500px;
-     margin-top: 75px;
-  
-     /* background-color: red; */
-  
-  
-     display: flex;
-     flex-wrap: wrap;
-  
+  /* background-color: red; */
+
+  display: flex;
+  flex-wrap: wrap;
+
   align-items: center;
 }
 
 @media (max-width: 500px) {
-  .right, .left {
+  .right,
+  .left {
     flex: 100%;
   }
 }
 
-
-
-.h11{
+.h11 {
   color: white;
 }
 
-.aboutus{
+.aboutus {
   display: flex;
   flex-direction: column;
- 
+
   justify-content: center;
-  height: 380px
+  height: 380px;
 }
 
 /* -------------------------------****************************************-------------------------------------- */
-
