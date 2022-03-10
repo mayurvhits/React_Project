@@ -1,86 +1,75 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: '',
-      phoneNo: '',
-      city: '',
+      email: '',
+      password: '',
     };
   }
 
-  handleNameChange = (event) => {
+  handleEmailChange = (event) => {
     this.setState({
-      name: event.target.value,
+      email: event.target.value,
     });
   };
 
-  handlePhoneNoChange = (event) => {
+  handlePasswordChange = (event) => {
     this.setState({
-      phoneNo: event.target.value,
-    });
-  };
-
-  handleCityChange = (event) => {
-    this.setState({
-      city: event.target.value,
+      password: event.target.value,
     });
   };
 
   handleSubmit = () => {
-    alert(`${this.state.name} ${this.state.phoneNo} ${this.state.city}`)
-  }
+    alert(`${this.state.email} ${this.state.password} ${this.state.city}`);
+  };
 
   render() {
     return (
       <div>
         <>
           <div>
-            <Form className="form" onSubmit={this.handleSubmit}>
+            <Form
+              className="form"
+              onSubmit={this.handleSubmit}
+              autoComplete="off"
+            >
               <Form.Label>
-                <h1>Fill this form</h1>
+                <h1 className="login">Login</h1>
               </Form.Label>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Applicants full Name</Form.Label>
+                {/* <Form.Label>Email</Form.Label> */}
                 <Form.Control
-                  type="text"
-                  placeholder="Enter your name"
-                  value={this.state.name}
-                  onChange={this.handleNameChange}
+                  type="email"
+                  placeholder="Email"
+                  value={this.state.email}
+                  onChange={this.handleEmailChange}
                 />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Phone number</Form.Label>
+                {/* <Form.Label>Password</Form.Label> */}
                 <Form.Control
-                  type="tel"
-                  placeholder="(+91) 1234567890"
-                  value={this.state.phoneNo}
-                  onChange={this.handlePhoneNoChange}
+                  type="password"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.handlePasswordChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>City</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter your city name"
-                  value={this.state.city}
-                  onChange={this.handleCityChange}
-                />
-              </Form.Group>
-              {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group> */}
-              <Form.Group controlId="formFileMultiple" className="mb-3">
-                <Form.Label>Upload document</Form.Label>
-                <Form.Control type="file" multiple />
-              </Form.Group>
+
               <Button className="button" variant="primary" type="submit">
-                Submit
+                Login
               </Button>
+              <div className="register">
+                <p>Don't have an account?</p>
+                <Link className="welcome" to="/registration">
+                  <h5 className="">Sign</h5>
+                </Link>
+              </div>
             </Form>
           </div>
         </>

@@ -88,7 +88,7 @@ Link:hover {
   height: 400px;
   display: flex;
   justify-content: center;
-    align-items: center;
+  align-items: center;
 }
 
 .right {
@@ -129,9 +129,26 @@ Link:hover {
   height: 380px;
 }
 
-.img1{
+.img1 {
   height: 300px;
   width: 400px;
 }
 
-/* -------------------------------****************************************-------------------------------------- */
+.fa {
+  color: white;
+  height: 35px;
+  width: 50px;
+  margin-left: 30px;
+}
+
+.welcome {
+  text-decoration: none;
+}
+
+.register {
+  display: flex;
+  width: 215px;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+

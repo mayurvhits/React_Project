@@ -1,16 +1,24 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMotorcycle } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
 function Firstnavbar() {
   return (
     <div className="navbar">
       <Navbar bg="dark" variant="dark">
+        <FontAwesomeIcon className="fa" icon="fa-solid fa-motorcycle" />
         <Container>
           {/* <Navbar.Brand className="navbrand" href="#home">
             Welcome
           </Navbar.Brand> */}
+
           <div className="navlink">
-            <h4 className='h11'>Welcome</h4>
+            <Link className='welcome' to="/">
+              <h4 className="h11">Home</h4>
+            </Link>
             <Link className="link" to="/About">
               About us
             </Link>
