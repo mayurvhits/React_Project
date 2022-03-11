@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'react-bootstrap';
 
-class Registration extends Component {
+class UserRegistration extends Component {
   constructor(props) {
     super(props);
 
@@ -61,7 +61,7 @@ class Registration extends Component {
               autoComplete="off"
             >
               <Form.Label>
-                <h1 className="login">Registration</h1>
+                <h1 className="login">User Registration</h1>
               </Form.Label>
               <Form.Group className="mb-3" controlId="formBasicText">
                 {/* <Form.Label>Email</Form.Label> */}
@@ -124,4 +124,4 @@ class Registration extends Component {
   }
 }
 
-export default Registration;
+export default UserRegistration;

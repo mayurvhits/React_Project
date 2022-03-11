@@ -147,8 +147,36 @@ Link:hover {
 
 .register {
   display: flex;
-  width: 215px;
+  width: 240px;
   justify-content: space-between;
   margin-top: 15px;
 }
 
+.checkbox{
+  width: 145px;
+  display: flex;
+  
+}
+
+.lable{
+  display: flex;
+  width: 215px;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.checkbox1{
+  display: flex;
+  align-content: center;
+}
+
+.table1{
+  overflow-y:auto;
+  /* width: 100%; */
+    height:100vh;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 20px;
+}

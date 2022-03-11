@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-class Login extends Component {
+class AdminLogin extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       email: '',
       password: '',
+      isChecked: true,
     };
   }
 
@@ -23,10 +24,19 @@ class Login extends Component {
       password: event.target.value,
     });
   };
-
+ 
+  toggleChange = () => {
+    this.setState({
+      isChecked: !this.state.isChecked,
+    });
+  };
+  
+  
+  
   handleSubmit = () => {
     alert(`${this.state.email} ${this.state.password} ${this.state.city}`);
   };
+
 
   render() {
     return (
@@ -39,7 +49,7 @@ class Login extends Component {
               autoComplete="off"
             >
               <Form.Label>
-                <h1 className="login">Login</h1>
+                <h1 className="login">Admin Login</h1>
               </Form.Label>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 {/* <Form.Label>Email</Form.Label> */}
@@ -64,12 +74,32 @@ class Login extends Component {
               <Button className="button" variant="primary" type="submit">
                 Login
               </Button>
-              <div className="register">
+              {/* <div className="register">
                 <p>Don't have an account?</p>
                 <Link className="welcome" to="/registration">
                   <h5 className="">Sign</h5>
                 </Link>
+              </div> */}
+              <div className="register">
+                <p>Don't have an account?</p>
+                <Link className="welcome" to="/Adminregistration">
+                  <h5 className="">Sign up</h5>
+                </Link>
               </div>
+              <div className='checkbox'>
+                    
+                <label className='lable'>Log in as a admin
+                  
+                  <input
+                    className='checkbox1'
+                    type="checkbox"
+                    defaultChecked={this.state.isChecked}
+                    onChange={this.toggleChange}
+                  />
+                  
+                </label>
+              </div>
+              
             </Form>
           </div>
         </>
@@ -78,4 +108,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default AdminLogin;

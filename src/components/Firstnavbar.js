@@ -35,6 +35,10 @@ function Firstnavbar() {
             <Link className="link" to="/query">
               Query
             </Link>
+
+            <Link className="link" to="/admintable">
+              Agents
+            </Link>
           </div>
         </Container>
       </Navbar>
