@@ -79,9 +79,9 @@ class Login extends Component {
                   <h5 className="">Sign up</h5>
                 </Link>
               </div>
-              <div className='checkbox'>
+              {/* <div className='checkbox'>
                     
-                <label className='lable'>Log in as a admin
+                <label className='lable'>Log in as a agent
                   <Link  to="/admin">
                   <input
                     className='checkbox1'
@@ -91,7 +91,7 @@ class Login extends Component {
                   />
                   </Link>
                 </label>
-              </div>
+              </div> */}
             </Form>
           </div>
         </>

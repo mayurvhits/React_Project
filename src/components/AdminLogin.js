@@ -49,7 +49,7 @@ class AdminLogin extends Component {
               autoComplete="off"
             >
               <Form.Label>
-                <h1 className="login">Admin Login</h1>
+                <h1 className="login">Agent Login</h1>
               </Form.Label>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 {/* <Form.Label>Email</Form.Label> */}
@@ -88,7 +88,7 @@ class AdminLogin extends Component {
               </div>
               <div className='checkbox'>
                     
-                <label className='lable'>Log in as a admin
+                <label className='lable'>Log in as a agent
                   
                   <input
                     className='checkbox1'

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar, Container, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMotorcycle } from '@fortawesome/free-solid-svg-icons';
@@ -41,6 +41,27 @@ function Firstnavbar() {
             </Link>
           </div>
         </Container>
+        <span className='span'>
+        <>
+  <Dropdown>
+    <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
+      Users
+    </Dropdown.Toggle>
+
+    <Dropdown.Menu variant="dark" align="end"  id="dropdown-menu-align-end">
+      {/* <Dropdown.Item href="#/action-1" active>
+        Action
+      </Dropdown.Item> */}
+      <Dropdown.Item href="#/action-2">Profile</Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item href="#/action-3">Log out</Dropdown.Item>
+      {/* <Dropdown.Item href="#/action-4">Separated link</Dropdown.Item> */}
+    </Dropdown.Menu>
+  </Dropdown>
+
+
+</>
+        </span>
       </Navbar>
     </div>
   );

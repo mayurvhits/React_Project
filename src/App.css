@@ -153,7 +153,8 @@ Link:hover {
 }
 
 .checkbox{
-  width: 145px;
+  margin-top: 5px;
+  width: 160px;
   display: flex;
   
 }
@@ -174,9 +175,17 @@ Link:hover {
 .table1{
   overflow-y:auto;
   /* width: 100%; */
-    height:100vh;
+    height:90vh;
     display: flex;
     align-items: center;
     margin-right: 20px;
     margin-left: 20px;
+}
+
+.clientTitle{
+  margin-bottom: 30px;
+}
+
+.span{
+  margin-right: 20px;
 }
