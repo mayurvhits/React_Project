@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const AdminRegistration = () => {
   // constructor(props) {
@@ -78,7 +78,6 @@ const AdminRegistration = () => {
       id: new Date().getTime().toString(),
     };
     setRecords([...records, newRecord]);
-    
   };
 
   return (

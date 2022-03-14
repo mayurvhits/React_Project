@@ -52,124 +52,123 @@ const Registration = () => {
   // };
 
   const [userRegistraion, setuserRegistraion] = useState({
-        fname: '',
-        lname: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        isChecked: true
-});
+    fname: '',
+    lname: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    isChecked: true,
+  });
 
-const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([]);
 
+  const handleInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
 
-const handleInput = (e) => {
-  const name= e.target.name;
-  const value= e.target.value;
+    console.log(name, value);
 
-  console.log(name, value);
+    setuserRegistraion({ ...userRegistraion, [name]: value });
+  };
 
-  setuserRegistraion({...userRegistraion, [name]: value})
-}
-
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    const newRecord = {...userRegistraion, id: new Date().getTime().toString()}
-    // console.log(records);  
+    const newRecord = {
+      ...userRegistraion,
+      id: new Date().getTime().toString(),
+    };
+    // console.log(records);
 
     setRecords([...records, newRecord]);
     console.log(records);
-}
 
-  
-    return (
-      <div>
-        <>
-          <div>
-            <Form
-              className="form"
-              onSubmit={handleSubmit}
-              autoComplete="off"
-            >
-              <Form.Label>
-                <h1 className="login">User Registration</h1>
-              </Form.Label>
-              <Form.Group className="mb-3" controlId="fname">
-               
-                <Form.Control
-                  type="text"
-                  placeholder="First name"
-                  value={userRegistraion.fname}
-                  onChange={handleInput}
-                  name="fname"              />
-              </Form.Group>
+    alert(
+      `${userRegistraion.fname} ${userRegistraion.lname} ${userRegistraion.email} ${userRegistraion.password} ${userRegistraion.confirmPassword}`
+    );
 
-              <Form.Group className="mb-3" controlId="lname">
-              
-                <Form.Control
-                  type="text"
-                  placeholder="Last name"
-                  value={userRegistraion.lname}
-            onChange={handleInput}
-            name="lname"              />
-              </Form.Group>
+    e.form.reset();
+  };
 
-              <Form.Group className="mb-3" controlId="email">
-               
-                <Form.Control
-                  type="email"
-                  placeholder="Enter your email"
-                  value={userRegistraion.email}
-                  onChange={handleInput}
-                  name="email"              />
-              </Form.Group>
+  return (
+    <div>
+      <>
+        <div>
+          <Form className="form" onSubmit={handleSubmit} autoComplete="off">
+            <Form.Label>
+              <h1 className="login">User Registration</h1>
+            </Form.Label>
+            <Form.Group className="mb-3" controlId="fname">
+              <Form.Control
+                type="text"
+                placeholder="First name"
+                value={userRegistraion.fname}
+                onChange={handleInput}
+                name="fname"
+              />
+            </Form.Group>
 
-              <Form.Group className="mb-3" controlId="password">
-             
-                <Form.Control
-                  type="password"
-                  placeholder="Password"
-                  value={userRegistraion.password}
-                  onChange={handleInput}
-                  name="password" 
-                />
-              </Form.Group>
+            <Form.Group className="mb-3" controlId="lname">
+              <Form.Control
+                type="text"
+                placeholder="Last name"
+                value={userRegistraion.lname}
+                onChange={handleInput}
+                name="lname"
+              />
+            </Form.Group>
 
-              <Form.Group className="mb-3" controlId="confirmPassword">
-                
-                <Form.Control
-                  type="password"
-                  placeholder="Confirm password"
-                  value={userRegistraion.confirmPassword}
-            onChange={handleInput}
-            name="confirmPassword" 
-                />
-              </Form.Group>
+            <Form.Group className="mb-3" controlId="email">
+              <Form.Control
+                type="email"
+                placeholder="Enter your email"
+                value={userRegistraion.email}
+                onChange={handleInput}
+                name="email"
+              />
+            </Form.Group>
 
-              <Button className="button" variant="primary" type="submit">
-                Sign up
-              </Button>
+            <Form.Group className="mb-3" controlId="password">
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={userRegistraion.password}
+                onChange={handleInput}
+                name="password"
+              />
+            </Form.Group>
 
-              <div className='checkbox'>
-                    
-                <label className='lable'>Register as a agent
-                  <Link  to="/Adminregistration">
+            <Form.Group className="mb-3" controlId="confirmPassword">
+              <Form.Control
+                type="password"
+                placeholder="Confirm password"
+                value={userRegistraion.confirmPassword}
+                onChange={handleInput}
+                name="confirmPassword"
+              />
+            </Form.Group>
+
+            <Button className="button" variant="primary" type="submit">
+              Sign up
+            </Button>
+
+            <div className="checkbox">
+              <label className="lable">
+                Register as a agent
+                <Link to="/Adminregistration">
                   <input
-                    className='checkbox1'
+                    className="checkbox1"
                     type="checkbox"
                     // defaultChecked
                     // onChange={handleInput}
                   />
-                  </Link>
-                </label>
-              </div>
-            </Form>
-          </div>
-        </>
-      </div>
-    );
-  }
-
+                </Link>
+              </label>
+            </div>
+          </Form>
+        </div>
+      </>
+    </div>
+  );
+};
 
 export default Registration;
