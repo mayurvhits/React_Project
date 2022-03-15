@@ -175,7 +175,7 @@ Link:hover {
 .table1{
   overflow-y:auto;
   /* width: 100%; */
-    height:90vh;
+    height:100%;
     display: flex;
     align-items: center;
     margin-right: 20px;
@@ -188,4 +188,13 @@ Link:hover {
 
 .span{
   margin-right: 20px;
+}
+
+.hey{
+  margin-right: 10px;
+}
+
+.show{
+  margin-top: 50px;
+  margin-left: 50px;
 }

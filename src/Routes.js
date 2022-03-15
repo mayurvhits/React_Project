@@ -8,12 +8,15 @@ import UserRegistration from './components/UserRegistration';
 // import AdminLogin from './components/AdminLogin';
 import AdminRegistration from './components/AgentRegistration'
 import AdminTable from './components/AdminTable';
+import EditInfo from './components/EditInfo';
+import ViewInfo from './components/ViewInfo';
 
 function Routes() {
   return (
     <>
       <Router>
         <Firstnavbar></Firstnavbar>
+
         <Switch>
           <Route exact path={'/'} component={Login} />
           <Route exact path={'/About'} component={About} />
@@ -23,6 +26,8 @@ function Routes() {
           <Route exact path={'/Adminregistration'} component={AdminRegistration} />
           {/* <Route exact path={'/admin'} component={AdminLogin} /> */}
           <Route exact path={'/admintable'} component={AdminTable} />
+          <Route exact path={'/editinfo/:id'} component={EditInfo} />
+          <Route exact path={'/viewinfo/:id'} component={ViewInfo} />
         </Switch>
       </Router>
     </>

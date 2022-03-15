@@ -1,22 +1,53 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "post one",
-      "body": "This is the post body",
-      "publishedAt": "11-03-2022"
+      "name": "Mayur Bhalgama",
+      "phone": "1234567891",
+      "city": "Snagar",
+      "file": "",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "post two",
-      "body": "This is the post body",
-      "publishedAt": "11-03-2022"
+      "name": "rahul sharma",
+      "phone": "123654987",
+      "city": "Abad",
+      "file": "",
+      "id": 2
     },
     {
-      "id": 3,
-      "title": "post three",
-      "body": "This is the post body",
-      "publishedAt": "11-03-2022"
+      "name": "john",
+      "phone": "9874563210",
+      "city": "Abad",
+      "file": "",
+      "id": 3
+    },
+    {
+      "name": "doe",
+      "phone": "3256987400",
+      "city": "Abad",
+      "file": "",
+      "id": 4
+    },
+    {
+      "name": "alex",
+      "phone": "1598746321",
+      "city": "Abad",
+      "file": "C:\\fakepath\\webex.exe",
+      "id": 5
+    },
+    {
+      "name": "bolt",
+      "phone": "9851236547",
+      "city": "Abad",
+      "file": "",
+      "id": 6
+    },
+    {
+      "name": "rohan",
+      "phone": "7896547895",
+      "city": "Abad",
+      "file": "",
+      "id": 7
     }
   ],
   "users": [
@@ -25,6 +56,5 @@
       "name": "Mayur ",
       "email": "mayur@mayur.com"
     }
-    
   ]
 }

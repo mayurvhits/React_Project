@@ -1,7 +1,28 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-function AdminTable() {
+import axios from 'axios';
+
+const AdminTable = () => {
+
+  const [users, setUser] = useState([]);
+
+  useEffect(() => {
+     loadUsers();
+  }, []);
+
+  const loadUsers = async () => {
+      const result = await axios.get("http://localhost:5000/posts");
+      setUser(result.data);
+      // setUser(result.data.reverse());            //  to reverse the order of apllicants list
+  };
+
+  const deleteUser = async (id) => {
+     await axios.delete(`http://localhost:5000/posts/${id}`);
+     loadUsers();
+  }
+   
   return (
     <>
     <div className="table1">
@@ -13,71 +34,37 @@ function AdminTable() {
           <tr>
             <th>Id</th>
             <th>Applicants Name</th>
-            <th>Number</th>
-            <th>city</th>
+            <th>Phone number</th>
+            <th>City</th>
+            <th>Documents</th>
+            <th>action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>roy</td>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>roy</td>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>roy</td>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>roy</td>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>roy</td>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>roy</td>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>roy</td>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
+          {/* <tr>
             <td>10</td>
             <td>roy</td>
             <td>Larry</td>
             <td>@twitter</td>
-          </tr>
+          </tr> */}
+          {
+            users.map((user, index) => (
+              <tr>
+                <th scope='row'>{index + 1}</th>
+              <td>{user.name}</td>
+              <td>{user.phone}</td>
+              <td>{user.city}</td>
+              <td>{user.file}</td>
+              <td>
+                <div>
+                <Link className="btn btn-primary hey" to={`viewinfo/${user.id}`} >View</Link>
+                <Link className="btn btn-outline-primary hey " to={`editinfo/${user.id}`}>Edit</Link> 
+                <Link className="btn btn-danger " onClick={() => deleteUser(user.id)}>Delete</Link>
+               </div>
+              </td>
+              </tr>
+            ))
+          }
         </tbody>
       </Table>
     </div>
