@@ -1,12 +1,14 @@
 .form {
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 100px;
+  /* margin-left: 20%;
+  margin-right: 20%; */
+  /* margin-top: 100px; */
   border: 1px solid black;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 3px 2px rgb(226, 226, 226);
   border-style: none;
+  width: 500px;
+
 }
 
 .navbar {
@@ -197,4 +199,12 @@ Link:hover {
 .show{
   margin-top: 50px;
   margin-left: 50px;
+}
+
+.div1{
+  /* width: 100vh; */
+  height: 90vh;
+  display: flex !important;
+  justify-content: center;
+  align-items: center !important;
 }

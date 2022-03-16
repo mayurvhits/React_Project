@@ -1,14 +1,14 @@
 {
   "posts": [
     {
-      "name": "Mayur Bhalgama",
+      "name": "Mayur ",
       "phone": "1234567891",
       "city": "Snagar",
       "file": "",
       "id": 1
     },
     {
-      "name": "rahul sharma",
+      "name": "rahul ",
       "phone": "123654987",
       "city": "Abad",
       "file": "",
@@ -29,13 +29,6 @@
       "id": 4
     },
     {
-      "name": "alex",
-      "phone": "1598746321",
-      "city": "Abad",
-      "file": "C:\\fakepath\\webex.exe",
-      "id": 5
-    },
-    {
       "name": "bolt",
       "phone": "9851236547",
       "city": "Abad",
@@ -43,11 +36,11 @@
       "id": 6
     },
     {
-      "name": "rohan",
-      "phone": "7896547895",
-      "city": "Abad",
+      "name": "black",
+      "phone": "78945568523",
+      "city": "goa",
       "file": "",
-      "id": 7
+      "id": 8
     }
   ],
   "users": [

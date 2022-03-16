@@ -90,83 +90,79 @@ const Registration = () => {
   };
 
   return (
-    <div>
-      <>
-        <div>
-          <Form className="form" onSubmit={handleSubmit} autoComplete="off">
-            <Form.Label>
-              <h1 className="login">User Registration</h1>
-            </Form.Label>
-            <Form.Group className="mb-3" controlId="fname">
-              <Form.Control
-                type="text"
-                placeholder="First name"
-                value={userRegistraion.fname}
-                onChange={handleInput}
-                name="fname"
+    <div className="div1">
+      <Form className="form" onSubmit={handleSubmit} autoComplete="off">
+        <Form.Label>
+          <h1 className="login">User Registration</h1>
+        </Form.Label>
+        <Form.Group className="mb-3" controlId="fname">
+          <Form.Control
+            type="text"
+            placeholder="First name"
+            value={userRegistraion.fname}
+            onChange={handleInput}
+            name="fname"
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="lname">
+          <Form.Control
+            type="text"
+            placeholder="Last name"
+            value={userRegistraion.lname}
+            onChange={handleInput}
+            name="lname"
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="email">
+          <Form.Control
+            type="email"
+            placeholder="Enter your email"
+            value={userRegistraion.email}
+            onChange={handleInput}
+            name="email"
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="password">
+          <Form.Control
+            type="password"
+            placeholder="Password"  
+            value={userRegistraion.password}
+            onChange={handleInput}
+            name="password"
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="confirmPassword">
+          <Form.Control
+            type="password"
+            placeholder="Confirm password"
+            value={userRegistraion.confirmPassword}
+            onChange={handleInput}
+            name="confirmPassword"
+          />
+        </Form.Group>
+
+        <Button className="button" variant="primary" type="submit">
+          Sign up
+        </Button>
+
+        <div className="checkbox">
+          <label className="lable">
+            Register as a agent
+            <Link to="/Adminregistration">
+              <input
+                className="checkbox1"
+                type="checkbox"
+                // defaultChecked
+                // onChange={handleInput}
               />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="lname">
-              <Form.Control
-                type="text"
-                placeholder="Last name"
-                value={userRegistraion.lname}
-                onChange={handleInput}
-                name="lname"
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="email">
-              <Form.Control
-                type="email"
-                placeholder="Enter your email"
-                value={userRegistraion.email}
-                onChange={handleInput}
-                name="email"
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="password">
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                value={userRegistraion.password}
-                onChange={handleInput}
-                name="password"
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="confirmPassword">
-              <Form.Control
-                type="password"
-                placeholder="Confirm password"
-                value={userRegistraion.confirmPassword}
-                onChange={handleInput}
-                name="confirmPassword"
-              />
-            </Form.Group>
-
-            <Button className="button" variant="primary" type="submit">
-              Sign up
-            </Button>
-
-            <div className="checkbox">
-              <label className="lable">
-                Register as a agent
-                <Link to="/Adminregistration">
-                  <input
-                    className="checkbox1"
-                    type="checkbox"
-                    // defaultChecked
-                    // onChange={handleInput}
-                  />
-                </Link>
-              </label>
-            </div>
-          </Form>
+            </Link>
+          </label>
         </div>
-      </>
+      </Form>
     </div>
   );
 };
