@@ -76,7 +76,7 @@ const ApplicantsForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post("http://localhost:5000/posts", userRegistraion);
-    // history.push('/admintable');  // to reidrect to applicants table after submiting the form
+    history.push('/admintable');  // to reidrect to applicants table after submiting the form
 
     const newRecord = {
       ...userRegistraion,

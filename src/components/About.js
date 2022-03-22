@@ -13,18 +13,12 @@ const About = () => {
             <h4>About us</h4>
             <h3>Welcome to RTO consultancy</h3>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
-              earum omnis obcaecati saepe nostrum ut est iure enim, officia,
-              recusandae consequuntur vel, nulla vero harum? Voluptas
-              dignissimos ad quidem. Repellendus vel accusantium aliquam!
-              Necessitatibus tempore suscipit labore, debitis veniam amet quo
-              laudantium facilis quisquam et omnis veritatis recusandae
-              quibusdam ipsum numquam, nobis sunt! Enim porro dolorem officiis
-              aspernatur voluptatum eos eius impedit laudantium fuga? Rem eaque
-              quibusdam quae nesciunt fugit dolore saepe soluta dignissimos
-              dicta, placeat veritatis nobis ipsam nostrum adipisci illo nulla
-              nam ea, cupiditate quas tempora beatae. Atque fugit culpa
-              quibusdam delectus nulla doloribus corporis odit? Velit, impedit?
+              We provide all types of RTO service in all Gujart state.
+              Service types- Driving licence, Duplicate RC book, Hypothecation
+              deletion (HP) New registration of vehicle, No objection
+              certificate (NOC), international Driving License service &
+              Ownership transfer. Payment of road tax & all types registration
+              of vehicle
             </p>
           </div>
         </div>

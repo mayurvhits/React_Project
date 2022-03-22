@@ -103,76 +103,61 @@
 // export default Login;
 
 import React, { useState } from 'react';
-import { Button, Form, } from 'react-bootstrap';
+import { Button, Form, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 
 const Login = () => {
-
-
-  const [userRegistraion, setuserRegistraion] = useState({
-    email: '',
-    password: '',
-    
-  });
-
-  const [records, setRecords] = useState([]);
-
-  const handleInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-
-    console.log(name, value);
-
-    setuserRegistraion({ ...userRegistraion, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
+  const history = useHistory();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const { logIn } = useAuth();
+   
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newRecord = {
-      ...userRegistraion,
-      id: new Date().getTime().toString(),
-    };
-    // console.log(records);
-
-    setRecords([...records, newRecord]);
-    // console.log(records);
-
-    alert(
-      `${userRegistraion.email} ${userRegistraion.password}  `
-    );
-
-    // e.form.reset();
+    setError('');
+    try {
+      await logIn(email, password);
+      history.push('/Applicants')
+      alert('log in successfully')
+      // navigate('/');
+    } catch (err) {
+      setError(err.message);
+    }
   };
-
+  
   return (
     <div>
       <>
         <div className='div1'>
+          
           <Form className="form" onSubmit={handleSubmit} autoComplete="off">
-          {console.log('Mayur', records)}
+          {error && (
+          <Alert className="hav" variant="danger">
+            {error}
+          </Alert>
+        )}
             <Form.Label>
               <h1 className="login">Login</h1>
             </Form.Label>
-            <Form.Group className="mb-3" controlId="email">
-              <Form.Control
-                type="email"
-                placeholder="Email"
-                value={userRegistraion.email}
-                onChange={handleInput}
-                name="email"
-              />
-            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control
+            type="email"
+            placeholder="Email addresss "
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
 
-            <Form.Group className="mb-3" controlId="password">
-              <Form.Control
-                type="password"
-                placeholder="password"
-                value={userRegistraion.password}
-                onChange={handleInput}
-                name="password"
-              />
-            </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Control
+            type="password"
+            placeholder="Password "
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
 
             <Button className="button" variant="primary" type="submit">
                  Login

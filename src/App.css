@@ -207,4 +207,16 @@ Link:hover {
   display: flex !important;
   justify-content: center;
   align-items: center !important;
+  flex-direction: column;
+}
+
+.alert{
+  width: 285px;
+  margin-left: 0px;
+
+
+}
+
+.welcome:hover{
+  color: blue;
 }

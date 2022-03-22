@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+
 import axios from 'axios';
 
 const AdminTable = () => {

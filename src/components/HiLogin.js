@@ -2,30 +2,28 @@ import React, { useState } from 'react';
 import { Button, Form, Alert } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-// import { useNavigate } from '@reach/router';
-const UserRegistration = () => {
+import { useHistory } from 'react-router-dom';
+
+const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { signUp } = useAuth();
+  const { logIn } = useAuth();
   // const navigate = useNavigate();
-  console.log(useAuth(),'useAuth()useAuth()useAuth()');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
-      await signUp(email, password);
-      history.push('/')
-      alert('Thanks! your account has been successfully created')
+      await logIn(email, password);
+      history.push('/Applicants')
+      alert('log in successfully')
       // navigate('/');
     } catch (err) {
       setError(err.message);
     }
   };
-
   return (
     <div className="div1">
       <Form className="form" onSubmit={handleSubmit} autoComplete="off">
@@ -35,7 +33,7 @@ const UserRegistration = () => {
           </Alert>
         )}
         <Form.Label>
-          <h1 className="login">User Registration</h1>
+          <h1 className="login">Log in</h1>
         </Form.Label>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
@@ -54,25 +52,15 @@ const UserRegistration = () => {
         </Form.Group>
 
         <Button className="button" variant="primary" type="submit">
-          Sign up
+          Log in
         </Button>
 
-        <div className="checkbox">
-          <label className="lable">
-            Register as a agent
-            <Link to="/Adminregistration">
-              <input
-                className="checkbox1"
-                type="checkbox"
-                // defaultChecked
-                // onChange={handleInput}
-              />
-            </Link>
-          </label>
-        </div>
+        
       </Form>
     </div>
   );
 };
+  
 
-export default UserRegistration;
+
+export default Login;

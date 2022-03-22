@@ -61,7 +61,7 @@ const EditInfo = () => {
   return (
     <div>
       <>
-        <div>
+        <div className='div1'>
           <Form className="form" onSubmit={handleSubmit} autoComplete="off">
           {console.log('Mayur', records)}
             <Form.Label>
