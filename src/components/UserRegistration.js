@@ -13,7 +13,7 @@ const UserRegistration = () => {
   // const navigate = useNavigate();
   console.log(useAuth(),'useAuth()useAuth()useAuth()');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { 
     e.preventDefault();
     setError('');
     try {
@@ -49,6 +49,14 @@ const UserRegistration = () => {
           <Form.Control
             type="password"
             placeholder="Password "
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Control
+            type="password"
+            placeholder="Confirm Password "
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>

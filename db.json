@@ -13,20 +13,6 @@
       "city": "Abad",
       "file": "",
       "id": 2
-    },
-    {
-      "name": "john",
-      "phone": "9874563210",
-      "city": "Abad",
-      "file": "",
-      "id": 3
-    },
-    {
-      "name": "doe",
-      "phone": "3256987400",
-      "city": "Abad",
-      "file": "",
-      "id": 4
     }
   ],
   "users": [

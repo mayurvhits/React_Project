@@ -220,3 +220,13 @@ Link:hover {
 .welcome:hover{
   color: blue;
 }
+
+.crud{
+  margin-left: 20px;
+  
+}
+
+.crud1{
+  display: flex;
+  justify-content: space-between;
+}
