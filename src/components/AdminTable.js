@@ -1,28 +1,51 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import fireDb from '../firebase';
+import { Link, useNavigate } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import {toast} from "react-toastify"
+import { Button } from 'bootstrap';
 
 
-import axios from 'axios';
 
 const AdminTable = () => {
-
-  const [users, setUser] = useState([]);
-
+  const [data, setData] = useState({});
+const navigate = useNavigate();
   useEffect(() => {
-     loadUsers();
+    fireDb.child('contact').on('value', (snapshot) => {
+      if (snapshot.val() !== null) {
+        setData({ ...snapshot.val() });
+        console.log('hi1');
+      } else {
+        setData({});
+        console.log('hi2');
+      }
+    });
+
+    return  () => {
+    setData({});
+    console.log("hi3");
+    };
   }, []);
 
-  const loadUsers = async () => {
-      const result = await axios.get("http://localhost:5000/posts");
-      setUser(result.data);
-      // setUser(result.data.reverse());            //  to reverse the order of apllicants list
-  };
-
-  const deleteUser = async (id) => {
-     await axios.delete(`http://localhost:5000/posts/${id}`);
-     loadUsers();
+  const deleteUser = (id) => {
+    if(window.confirm("Are you sure that you wanted to delete that contact?")){
+        fireDb.child(`contact/${id}`).remove((err) => {
+            if(err){
+                toast.error(err)
+            }else{
+                toast.success("Contact deleted successfully")
+            }
+        })
+    }
   }
+
+  const editUser = (id) => {
+      navigate(`/editinfo/${id}`)
+  }
+
+  const viewUser = (id) => {
+    navigate(`/viewinfo/${id}`)
+}
    
   return (
     <>
@@ -48,24 +71,24 @@ const AdminTable = () => {
             <td>Larry</td>
             <td>@twitter</td>
           </tr> */}
-          {
-            users.map((user, index) => (
-              <tr>
+          {Object.keys(data).map((id, index) => {
+            return (
+              <tr key={id}>
                 <th scope='row'>{index + 1}</th>
-              <td>{user.name}</td>
-              <td>{user.phone}</td>
-              <td>{user.city}</td>
-              <td>{user.file}</td>
+              <td>{data[id].name}</td>
+              <td>{data[id].phone}</td>
+              <td>{data[id].city}</td>
+              <td>{data[id].file}</td>
               <td>
                 <div>
-                <Link className="btn btn-primary hey" to={`viewinfo/${user.id}`} >View</Link>
-                <Link className="btn btn-outline-primary hey " to={`editinfo/${user.id}`}>Edit</Link> 
-                <Link className="btn btn-danger " onClick={() => deleteUser(user.id)}>Delete</Link>
+                <button className="btn btn-primary hey" onClick={() => viewUser(id)} >View</button> 
+                <button className="btn btn-outline-primary hey " onClick={() => editUser(id)}>Edit</button> 
+                <button className="btn btn-danger " onClick={() => deleteUser(id)}>Delete</button>
                </div>
               </td>
               </tr>
-            ))
-          }
+            );
+          })}
         </tbody>
       </Table>
     </div>

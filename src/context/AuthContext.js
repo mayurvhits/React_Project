@@ -15,11 +15,17 @@
         
         const [user ,setUser] = useState("");
         function logIn(email, password) {
+            console.log("Email", email);
             return signInWithEmailAndPassword(auth, email, password)
          }
 
         function signUp(email, password) {
            return createUserWithEmailAndPassword(auth, email, password)
+        }
+
+        function logOut() {
+            console.log("sign out");
+            return signOut(auth);
         }
 
         
@@ -33,12 +39,14 @@
                 unsubscribe();
             }
         }, []);
+
+        
        
        
         
         return (
             
-            <AuthContext.Provider value={{user, logIn, signUp}}>
+            <AuthContext.Provider value={{user, logIn, signUp, logOut}}>
                {children}
            </AuthContext.Provider>
         

@@ -39,6 +39,24 @@ function Firstnavbar() {
             <Link className="link" to="/admintable">
               Agents
             </Link>
+
+            {/* <Link className="link" to="/form">
+              form
+            </Link> */}
+
+            {/* <Link className="link" to="/addedit">
+              AddEdit
+            </Link> */}
+
+            {/* <Link className="link" to="/table">
+              Table
+            </Link> */}
+
+<Link className="link" to="/home">
+              Home
+            </Link>
+
+            
           </div>
         </Container>
         <span className='span'>

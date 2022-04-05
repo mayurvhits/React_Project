@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 
-const AdminRegistration = () => {
+const AgentRegistration = () => {
   // constructor(props) {
   //   super(props);
 
@@ -163,4 +163,4 @@ const AdminRegistration = () => {
   );
 };
 
-export default AdminRegistration;
+export default AgentRegistration;

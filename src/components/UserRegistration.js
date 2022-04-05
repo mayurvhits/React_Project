@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import { Button, Form, Alert } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 // import { useNavigate } from '@reach/router';
 const UserRegistration = () => {
-  const history = useHistory();
+  // const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { signUp } = useAuth();
-  // const navigate = useNavigate();
-  console.log(useAuth(),'useAuth()useAuth()useAuth()');
+  const navigate = useNavigate();
+  console.log(useAuth(),);
 
   const handleSubmit = async (e) => { 
     e.preventDefault();
     setError('');
     try {
       await signUp(email, password);
-      history.push('/')
+      navigate('/')
       alert('Thanks! your account has been successfully created')
       // navigate('/');
     } catch (err) {
@@ -68,7 +68,7 @@ const UserRegistration = () => {
         <div className="checkbox">
           <label className="lable">
             Register as a agent
-            <Link to="/Adminregistration">
+            <Link to="/agentregistration">
               <input
                 className="checkbox1"
                 type="checkbox"

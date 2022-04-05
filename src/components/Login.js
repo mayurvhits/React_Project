@@ -105,12 +105,12 @@
 import React, { useState } from 'react';
 import { Button, Form, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 
 const Login = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -120,9 +120,10 @@ const Login = () => {
     e.preventDefault();
     setError('');
     try {
+      console.log("ho gaya log in ");
       await logIn(email, password);
-      history.push('/Applicants')
-      alert('log in successfully')
+      navigate('/home')
+     
       // navigate('/');
     } catch (err) {
       setError(err.message);
