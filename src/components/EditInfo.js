@@ -3,6 +3,7 @@ import { useHistory, useParams, useNavigate } from 'react-router-dom';
 import fireDb from '../firebase';
 import {toast} from "react-toastify"
 import { Button, Form } from 'react-bootstrap';
+import Firstnavbar from './Firstnavbar';
 
 const initialState = {
   name: '',
@@ -79,12 +80,13 @@ const EditInfo = () => {
                 }
             });
         }
-        setTimeout(() => navigate("/admintable"), 500)
+        setTimeout(() => navigate("/usertable"), 500)
     }
   }
   return (
     <div>
       <>
+      <Firstnavbar />
         <div className='div1'>
           <Form className="form" onSubmit={handleSubmit} autoComplete="off">
           {console.log('Mayur', data)}

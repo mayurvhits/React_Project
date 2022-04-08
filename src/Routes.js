@@ -20,15 +20,18 @@ import View from './components/View';
 import Update from './components/Update';
 import ProtectedRoute from './components/ProtectedRoute';
 import Home from './components/Home';
+import QueryTable from './components/QueryTable';
+import UserTable from './components/UserTable';
 // import HomePage from './components/HomePage'
 function Routes() {
   return (
     <>
           <AuthProvider>
       <Router>
-        <Firstnavbar></Firstnavbar>
+        {/* <Firstnavbar></Firstnavbar> */}
         <ToastContainer position="top-center" />
         <Routess>
+          <Route path={'/firstnavabar'} element={<Firstnavbar />}/>
           <Route  path={'/About'} element={<About />} />
           <Route  path={'/Applicants'} element={<ApplicantsForm />} />
           <Route  path={'/query'} element={<Query />} />
@@ -36,6 +39,8 @@ function Routes() {
           <Route path={'/agentregistration'} element={<AgentRegistration />} />
           {/* <Route  path={'/admin'} element={AdminLogin} /> */}
           <Route  path={'/admintable'} element={<AdminTable />} />
+          <Route  path={'/usertable'} element={<UserTable />} />
+          <Route  path={'/querytable'} element={<QueryTable />} />
           <Route  path={'/form'} element={<SingleData />} />
           <Route  path={'/addedit'} element={<AddEdit />} />
           <Route  path={'/update/:id'} element={<Update />} />

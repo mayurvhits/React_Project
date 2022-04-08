@@ -107,21 +107,25 @@ import { Button, Form, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-
+import GoogleButton from 'react-google-button'
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { logIn } = useAuth();
+  const { logIn, googleSignIn } = useAuth();
    
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
-      console.log("ho gaya log in ");
-      await logIn(email, password);
+      console.log("Logged in Successfully");
+      const userObject = await logIn(email, password);
+      console.log(userObject);
+      console.log(userObject.user.uid);
+      console.log(userObject.user.accessToken);
+      localStorage.setItem('id', userObject.user.uid)
       navigate('/home')
      
       // navigate('/');
@@ -130,10 +134,22 @@ const Login = () => {
     }
   };
   
+  const handleGoogleSignIn = async (e) => {
+     e.preventDefault();
+     try{
+         await googleSignIn();
+         navigate('/home')
+     }catch(err){
+       setError(err.message);
+     }
+  };
+
   return (
     <div>
       <>
-        <div className='div1'>
+       <h2><p className='div7'>Welcome to RTO consultancy </p></h2>
+       <hr />
+        <div className='div7'>
           
           <Form className="form" onSubmit={handleSubmit} autoComplete="off">
           {error && (
@@ -163,6 +179,10 @@ const Login = () => {
             <Button className="button" variant="primary" type="submit">
                  Login
                </Button>
+               <div className="register1">
+                 <GoogleButton className="g-btn" type="dark" onClick={handleGoogleSignIn} />
+               </div>
+               <hr />
                <div className="register">
                  <p>Don't have an account?</p>
                  <Link className="welcome" to="/registration">

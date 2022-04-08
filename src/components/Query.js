@@ -93,100 +93,128 @@
 
 // export default Query;
 
-import React, { useState } from 'react';
-import { Button, Form, } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import fireDb from '../firebase';
+import { Button, Form } from 'react-bootstrap';
+import Firstnavbar from './Firstnavbar';
+import { toast } from 'react-toastify';
 
+
+const initialState = {
+  name: '',
+  email: '',
+  // id: localStorage.setItem("uid"),
+  query: ''
+};
 
 const Query = () => {
+  const [state, setstate] = useState(initialState);
+  const [data, setData] = useState({});
 
+  const { name, email, query } = state;
 
-  const [userRegistraion, setuserRegistraion] = useState({
-      name: '',
-      email: '',
-      textarea: ''
-  });
+  const navigate = useNavigate();
 
-  const [records, setRecords] = useState([]);
+  const { id } = useParams();
 
-  const handleInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+  useEffect(() => {
+    fireDb.child('query').on('value', (snapshot) => {
+      if (snapshot.val() !== null) {
+        setData({ ...snapshot.val() });
+        // console.log('hi1');
+      } else {
+        setData({});
+        // console.log('hi2');
+      }
+    });
 
-    console.log(name, value);
+    return () => {
+      setData({});
+      // console.log("hi3");
+    };
+  }, [id]);
 
-    setuserRegistraion({ ...userRegistraion, [name]: value });
+  useEffect(() => {
+    if (id) {
+      setstate({ ...data[id] });
+    } else {
+      setstate({ ...initialState });
+    }
+
+    return () => {
+      setstate({ ...initialState });
+    };
+  }, [id, data]);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setstate({ ...state, [name]: value });
   };
 
   const handleSubmit = (e) => {
+    console.log('submit');
     e.preventDefault();
-    const newRecord = {
-      ...userRegistraion,
-      id: new Date().getTime().toString(),
-    };
-    // console.log(records);
-
-    setRecords([...records, newRecord]);
-    // console.log(records);
-
-    alert(
-      `${userRegistraion.name} ${userRegistraion.email} ${userRegistraion.textarea} `
-    );
-
-    // e.form.reset();
+    if (!name || !email || !query) {
+      toast.error('Please provide value in each input field');
+    } else {
+      fireDb.child('query').push(state, (err) => {
+        if (err) {
+          toast.error(err);
+        } else {
+          toast.success('Query added successfully');
+        }
+      });
+      setTimeout(() => navigate('/querytable'), 500);
+    }
   };
 
   return (
     <div>
       <>
-        <div className='div1'>
+        <Firstnavbar />
+        <div className="div1">
           <Form className="form" onSubmit={handleSubmit} autoComplete="off">
-          {console.log('Mayur', records)}
+            {/* {console.log('Mayur', records)} */}
             <Form.Label>
               <h1 className="login">Query section</h1>
             </Form.Label>
-            <Form.Group className="mb-3" controlId="name">
+            <Form.Group className="mb-3">
               <Form.Control
-                type="text"
-                placeholder="Full name"
-                value={userRegistraion.name}
-                onChange={handleInput}
-                name="name"
+                 id="name"
+                 type="text"
+                 placeholder="Enter your name"
+                 value={name || ''}
+                 onChange={handleInputChange}
+                 name="name"
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="email">
+            <Form.Group className="mb-3" >
               <Form.Control
+                id='email'
                 type="email"
-                placeholder="Enter your mail"
-                value={userRegistraion.email}
-                onChange={handleInput}
+                placeholder="Enter your email Id"
+                value={email || ""}
+                onChange={handleInputChange}
                 name="email"
               />
             </Form.Group>
 
-            <Form.Group
-            
-                controlId="Textarea"
-                
-                className="mb-3"
-              >
-                <Form.Control
-                 type="textarea"
-                 placeholder="Ask your queries here"
-                 value={userRegistraion.textarea}
-                 onChange={handleInput}
-                 name="textarea"
-                />
-              </Form.Group>
-         
-
-          
+            <Form.Group className="mb-3">
+              <Form.Control
+                id="query"
+                type="textarea"
+                placeholder="Ask your queries here"
+                value={query || ""}
+                onChange={handleInputChange}
+                name="query"
+              />
+            </Form.Group>
 
             <Button className="button" variant="primary" type="submit">
               Submit
             </Button>
-
-            
           </Form>
         </div>
       </>

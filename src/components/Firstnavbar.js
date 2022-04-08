@@ -1,12 +1,30 @@
 import React from 'react';
-import { Navbar, Container, Dropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Navbar, Container, Dropdown, Button } from 'react-bootstrap';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMotorcycle } from '@fortawesome/free-solid-svg-icons';
+import { faMotorcycle, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-library.add(faMotorcycle)
+library.add(faMotorcycle, faSignOutAlt);
 
 function Firstnavbar() {
+
+  const {user, logOut} = useAuth();
+  const   navigate = useNavigate();
+  console.log(user); 
+
+  const handleLogOut = async () => {
+
+    try{
+      localStorage.clear();
+      // console.log("ho gaya log out");
+         await logOut();
+         navigate('/home')
+    }catch (err){
+      console.log(err.message);
+    }
+  }
   return (
     <div className="navbar">
       <Navbar bg="dark" variant="dark">
@@ -17,16 +35,20 @@ function Firstnavbar() {
           </Navbar.Brand> */}
 
           <div className="navlink">
-            <Link className='welcome' to="/">
+            <Link className="welcome" to="/home">
               <h4 className="h11">Home</h4>
             </Link>
             <Link className="link" to="/About">
               About us
             </Link>
 
-            <Link className="link" to="/Applicants">
-              Applicants
+            <Link className="link" to="/usertable">
+              User info
             </Link>
+
+            {/* <Link className="link" to="/Applicants">
+              Applicants
+            </Link> */}
 
             {/* <Link className="link" to="/About">
                 Upload
@@ -52,33 +74,17 @@ function Firstnavbar() {
               Table
             </Link> */}
 
-<Link className="link" to="/home">
+            {/* <Link className="link" to="/home">
               Home
-            </Link>
-
-            
+            </Link> */}
           </div>
         </Container>
-        <span className='span'>
-        <>
-  <Dropdown>
-    <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
-      Users
-    </Dropdown.Toggle>
-
-    <Dropdown.Menu variant="dark" align="end"  id="dropdown-menu-align-end">
-      {/* <Dropdown.Item href="#/action-1" active>
-        Action
-      </Dropdown.Item> */}
-      <Dropdown.Item href="#/action-2">Profile</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item href="#/action-3">Log out</Dropdown.Item>
-      {/* <Dropdown.Item href="#/action-4">Separated link</Dropdown.Item> */}
-    </Dropdown.Menu>
-  </Dropdown>
-
-
-</>
+        <span className="span">
+          
+        <div className="logout2">
+        <Button className='logout1'  onClick={handleLogOut}>Log out <FontAwesomeIcon icon="fas fa-sign-out-alt" /></Button>
+      </div>
+          
         </span>
       </Navbar>
     </div>

@@ -2,21 +2,21 @@ import React, { useState, useEffect } from 'react';
 import fireDb from '../firebase';
 import { Link, useNavigate } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
-import {toast} from "react-toastify"
+import { toast } from 'react-toastify';
 import { Button } from 'bootstrap';
 import Firstnavbar from './Firstnavbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisV, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisV, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-library.add(faEllipsisV, faEye);
+library.add(faEllipsisV, faEdit);
 
-const AdminTable = () => {
+const UserTable = () => {
   const [data, setData] = useState({});
   const navigate = useNavigate();
   useEffect(() => {
-    fireDb.child('contact').on('value', (snapshot) => {
+    fireDb.child('contact').orderByChild('id').equalTo(localStorage.getItem('id')).on('value', (snapshot) => {
       if (snapshot.val() !== null) {
-        // console.log(snapshot.val());
+        console.log(snapshot.val());
         setData({ ...snapshot.val() });
         console.log('hi1');
       } else {
@@ -60,16 +60,17 @@ const AdminTable = () => {
   return (
     <>
       <Firstnavbar />
-      <div className="tableButton">
+      {/* <div className="tableButton">
         <div>
         <button className="button btn btn-primary">Applicants Info</button>
         </div>
         <Link to={'/querytable'}>
           <button className="button5 btn btn-primary">Query Info</button>
         </Link>
-      </div>
-      <h4><p className='home3'>Applicants information :</p></h4>
-      <hr />
+      </div> */}
+      <div className='view-b'>
+      <h4><p className='home3'>User information :</p></h4>
+      <hr className='home3' />
       <div className="table1">
         <Table striped bordered hover>
           <thead>
@@ -101,14 +102,9 @@ const AdminTable = () => {
                   <td>{data[id].file}</td>
                   <td>
                     <div>
+                      
                       <button
-                        className=""
-                        onClick={() => viewUser(id)}
-                      >
-                        <FontAwesomeIcon icon="fa-solid fa-eye" />
-                      </button>
-                      <button
-                        className="home3 "
+                        
                         onClick={() => editUser(id)}
                       >
                         <FontAwesomeIcon icon="fas fa-edit" />
@@ -127,8 +123,9 @@ const AdminTable = () => {
           </tbody>
         </Table>
       </div>
+      </div>
     </>
   );
 };
 
-export default AdminTable;
+export default UserTable;

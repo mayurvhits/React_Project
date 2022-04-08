@@ -45,6 +45,12 @@ Link:hover {
   border-color: #212529 !important;
 }
 
+.button5 {
+  background-color: #212529 !important;
+  border-color: #212529 !important;
+  margin-left: 20px;
+}
+
 .box {
   height: 50%;
   margin-top: 100px;
@@ -154,6 +160,13 @@ Link:hover {
   margin-top: 15px;
 }
 
+.register1 {
+  display: flex;
+  width: 230px;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
 .checkbox{
   margin-top: 5px;
   width: 160px;
@@ -209,6 +222,40 @@ Link:hover {
   align-items: center !important;
   flex-direction: column;
 }
+
+.div5{
+  /* width: 100vh; */
+  height: 40vh;
+  display: flex !important;
+  justify-content: center;
+  align-items: center !important;
+  flex-direction: column;
+  /* margin-bottom: 20px !important; */
+}
+
+.div7{
+  /* width: 100vh; */
+  margin-top: 70px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center !important;
+  flex-direction: column;
+  /* margin-bottom: 20px !important; */
+}
+
+
+
+.div6{
+  /* width: 100vh; */
+  /* height: 40vh; */
+  display: flex !important;
+  justify-content: center;
+  align-items: center !important;
+  flex-direction: column;
+  margin-bottom: 20px !important;
+}
+
+
 
 .alert{
   width: 285px;
@@ -277,3 +324,47 @@ Link:hover {
   align-items: center;
   justify-content: space-evenly ;
 }
+
+.home2{
+  margin-left: 20%;
+}
+
+.logout2{
+  display: flex;
+  justify-content: center;
+}
+
+.logout1{
+  width: 100px;
+  background-color: #646464 !important;
+  border-style: none !important;
+  /* color: black !important; */
+  /* font-weight: bold !important; */
+}
+
+.tableButton{
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.home3{
+  margin-left: 20px;
+  
+}
+
+.danger{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: initial ;
+}
+
+.footer1{
+  height: 20px;
+}
+

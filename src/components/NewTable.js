@@ -68,8 +68,7 @@ const NewTable = () => {
                 <td>
                 <Link className="btn btn-primary hey" to={`view/${id}`} >View</Link>
                 <Link className="btn btn-outline-primary hey " to={`update/${id}`}>Edit</Link> 
-                {/* <Link className="btn btn-danger " >Delete</Link> */}
-                <Link className="btn btn-danger " onClick={() => deleteUser(id)}>Delete</Link>
+                <button className="btn btn-danger " onClick={() => deleteUser(id)}>Delete</button>
                 </td>
               </tr>
             );

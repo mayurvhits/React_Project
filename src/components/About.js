@@ -1,9 +1,10 @@
 import React from 'react';
 import profile from '../assets/download.jpg';
-
+import Firstnavbar from './Firstnavbar';
 const About = () => {
   return (
     <div>
+      <Firstnavbar/>
       <div className="main">
         <div className="left">
           <img className="download" src={profile} alt="Logo" />

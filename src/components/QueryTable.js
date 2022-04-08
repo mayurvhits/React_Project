@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import fireDb from '../firebase';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
-import {toast} from "react-toastify"
-import { Button } from 'bootstrap';
+import { toast } from 'react-toastify';
 import Firstnavbar from './Firstnavbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisV, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-library.add(faEllipsisV, faEye);
+library.add(faTrash);
 
-const AdminTable = () => {
+const QueryTable = () => {
   const [data, setData] = useState({});
   const navigate = useNavigate();
   useEffect(() => {
-    fireDb.child('contact').on('value', (snapshot) => {
+    fireDb.child('query').on('value', (snapshot) => {
       if (snapshot.val() !== null) {
-        // console.log(snapshot.val());
         setData({ ...snapshot.val() });
         console.log('hi1');
       } else {
@@ -32,10 +30,8 @@ const AdminTable = () => {
   }, []);
 
   const deleteUser = (id) => {
-    if (
-      window.confirm('Are you sure that you wanted to delete that contact?')
-    ) {
-      fireDb.child(`contact/${id}`).remove((err) => {
+    if (window.confirm('Are you sure that you wanted to delete that query?')) {
+      fireDb.child(`query/${id}`).remove((err) => {
         if (err) {
           toast.error(err);
         } else {
@@ -45,30 +41,31 @@ const AdminTable = () => {
     }
   };
 
-  const editUser = (id) => {
-    navigate(`/editinfo/${id}`);
-  };
+  //   const editUser = (id) => {
+  //       navigate(`/editinfo/${id}`)
+  //   }
 
-  const viewUser = (id) => {
-    navigate(`/viewinfo/${id}`);
-  };
-
-  const goBackApplicantsTable = () => {
-    navigate('/admintable');
-  };
+  //   const viewUser = (id) => {
+  //     navigate(`/viewinfo/${id}`)
+  // }
 
   return (
     <>
       <Firstnavbar />
       <div className="tableButton">
         <div>
-        <button className="button btn btn-primary">Applicants Info</button>
+          <button
+            className="button btn btn-primary"
+            onClick={() => navigate('/admintable')}
+          >
+            Applicants Info
+          </button>
         </div>
-        <Link to={'/querytable'}>
+        <div>
           <button className="button5 btn btn-primary">Query Info</button>
-        </Link>
+        </div>
       </div>
-      <h4><p className='home3'>Applicants information :</p></h4>
+      <h4><p className='home3'>Query information :</p></h4>
       <hr />
       <div className="table1">
         <Table striped bordered hover>
@@ -78,43 +75,25 @@ const AdminTable = () => {
             <tr>
               <th>Id</th>
               <th>Applicants Name</th>
-              <th>Phone number</th>
-              <th>City</th>
-              <th>Documents</th>
+              <th>Email</th>
+              <th>Query</th>
               <th>action</th>
             </tr>
           </thead>
           <tbody>
-            {/* <tr>
-            <td>10</td>
-            <td>roy</td>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr> */}
             {Object.keys(data).map((id, index) => {
               return (
                 <tr key={id}>
                   <th scope="row">{index + 1}</th>
                   <td>{data[id].name}</td>
-                  <td>{data[id].phone}</td>
-                  <td>{data[id].city}</td>
-                  <td>{data[id].file}</td>
+                  <td>{data[id].email}</td>
+                  <td>{data[id].query}</td>
                   <td>
-                    <div>
+                    <div className='danger'>
+                      {/* <button className="btn btn-primary hey" onClick={() => viewUser(id)} >View</button>  */}
+                      {/* <button className="btn btn-outline-primary hey " onClick={() => editUser(id)}>Edit</button>  */}
                       <button
-                        className=""
-                        onClick={() => viewUser(id)}
-                      >
-                        <FontAwesomeIcon icon="fa-solid fa-eye" />
-                      </button>
-                      <button
-                        className="home3 "
-                        onClick={() => editUser(id)}
-                      >
-                        <FontAwesomeIcon icon="fas fa-edit" />
-                      </button>
-                      <button
-                        className="home3"
+                        // className="btn btn-danger danger "
                         onClick={() => deleteUser(id)}
                       >
                         <FontAwesomeIcon icon="fa-solid fa-trash" />
@@ -131,4 +110,4 @@ const AdminTable = () => {
   );
 };
 
-export default AdminTable;
+export default QueryTable;

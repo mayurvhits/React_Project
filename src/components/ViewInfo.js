@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import fireDb from "../firebase"
 import { useParams, Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+import Firstnavbar from './Firstnavbar'
 
 const ViewInfo = () => {
 
@@ -23,6 +24,8 @@ const ViewInfo = () => {
     console.log("users", user);
 
   return (
+      <>
+      <Firstnavbar />
     <div className='show' >
         
         <h3 className=''>User Id: {id}</h3>
@@ -39,7 +42,7 @@ const ViewInfo = () => {
               Go back 
             </Button>
             </Link>
-    </div>
+    </div></>
   )
 }
 
