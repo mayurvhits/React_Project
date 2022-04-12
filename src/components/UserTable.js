@@ -107,13 +107,13 @@ const UserTable = () => {
                         
                         onClick={() => editUser(id)}
                       >
-                        <FontAwesomeIcon icon="fas fa-edit" />
+                        <FontAwesomeIcon className='fonticon buzz-out-on-hover' icon="fas fa-edit" />
                       </button>
                       <button
                         className="home3"
                         onClick={() => deleteUser(id)}
                       >
-                        <FontAwesomeIcon icon="fa-solid fa-trash" />
+                        <FontAwesomeIcon className='fonticon buzz-out-on-hover' icon="fa-solid fa-trash" />
                       </button>
                     </div>
                   </td>

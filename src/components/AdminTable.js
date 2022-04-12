@@ -62,10 +62,10 @@ const AdminTable = () => {
       <Firstnavbar />
       <div className="tableButton">
         <div>
-        <button className="button btn btn-primary">Applicants Info</button>
+        <button className="button btn btn-primary buzz-out-on-hover">Applicants Info</button>
         </div>
         <Link to={'/querytable'}>
-          <button className="button5 btn btn-primary">Query Info</button>
+          <button className="button5 btn btn-primary buzz-out-on-hover">Query Info</button>
         </Link>
       </div>
       <h4><p className='home3'>Applicants information :</p></h4>
@@ -105,19 +105,19 @@ const AdminTable = () => {
                         className=""
                         onClick={() => viewUser(id)}
                       >
-                        <FontAwesomeIcon icon="fa-solid fa-eye" />
+                        <FontAwesomeIcon className='fonticon buzz-out-on-hover' icon="fa-solid fa-eye" />
                       </button>
                       <button
                         className="home3 "
                         onClick={() => editUser(id)}
                       >
-                        <FontAwesomeIcon icon="fas fa-edit" />
+                        <FontAwesomeIcon className='fonticon buzz-out-on-hover' icon="fas fa-edit" />
                       </button>
                       <button
                         className="home3"
                         onClick={() => deleteUser(id)}
                       >
-                        <FontAwesomeIcon icon="fa-solid fa-trash" />
+                        <FontAwesomeIcon className='fonticon buzz-out-on-hover' icon="fa-solid fa-trash" />
                       </button>
                     </div>
                   </td>

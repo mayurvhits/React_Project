@@ -24,18 +24,16 @@
 //       password: event.target.value,
 //     });
 //   };
-  
+
 //   toggleChange = () => {
 //     this.setState({
 //       isChecked: this.state.isChecked,
 //     });
 //   };
-  
-  
+
 //   handleSubmit = () => {
 //     alert(`${this.state.email} ${this.state.password} ${this.state.city}`);
 //   };
-
 
 //   render() {
 //     return (
@@ -80,10 +78,10 @@
 //                 </Link>
 //               </div>
 //               {/* <div className='checkbox'>
-                    
+
 //                 <label className='lable'>Log in as a agent
 //                   <Link  to="/admin">
-//                   <input
+//                   <inputs
 //                     className='checkbox1'
 //                     type="checkbox"
 //                     defaultChecked={this.state.isChecked}
@@ -107,7 +105,7 @@ import { Button, Form, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import GoogleButton from 'react-google-button'
+import GoogleButton from 'react-google-button';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -115,80 +113,88 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { logIn, googleSignIn } = useAuth();
-   
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
-      console.log("Logged in Successfully");
+      console.log('Logged in Successfully');
       const userObject = await logIn(email, password);
       console.log(userObject);
-      console.log(userObject.user.uid);
-      console.log(userObject.user.accessToken);
-      localStorage.setItem('id', userObject.user.uid)
-      navigate('/home')
-     
-      // navigate('/');
+      // console.log(userObject.user.email);
+      // console.log(userObject.user.accessToken);
+      localStorage.setItem('id', userObject.user.uid);
+
+      if (userObject.user.email === 'mayurbhalgama2419@gmail.com') {
+        navigate('/admintable');
+      } else {
+        navigate('/home');
+      }
     } catch (err) {
       setError(err.message);
     }
   };
-  
+
   const handleGoogleSignIn = async (e) => {
-     e.preventDefault();
-     try{
-         await googleSignIn();
-         navigate('/home')
-     }catch(err){
-       setError(err.message);
-     }
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate('/home');
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
     <div>
       <>
-       <h2><p className='div7'>Welcome to RTO consultancy </p></h2>
-       <hr />
-        <div className='div7'>
-          
+        <h2>
+          <p className="div7">Welcome to RTO consultancy </p>
+        </h2>
+        <hr />
+        <div className="div7">
           <Form className="form" onSubmit={handleSubmit} autoComplete="off">
-          {error && (
-          <Alert className="hav" variant="danger">
-            {error}
-          </Alert>
-        )}
+            {error && (
+              <Alert className="hav" variant="danger">
+                {error}
+              </Alert>
+            )}
             <Form.Label>
               <h1 className="login">Login</h1>
             </Form.Label>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="email"
-            placeholder="Email addresss "
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
+              <Form.Control
+                type="email"
+                placeholder="Email addresss "
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control
-            type="password"
-            placeholder="Password "
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Control
+                type="password"
+                placeholder="Password "
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
 
             <Button className="button" variant="primary" type="submit">
-                 Login
-               </Button>
-               <div className="register1">
-                 <GoogleButton className="g-btn" type="dark" onClick={handleGoogleSignIn} />
-               </div>
-               <hr />
-               <div className="register">
-                 <p>Don't have an account?</p>
-                 <Link className="welcome" to="/registration">
-                   <h5 className="">Sign up</h5>
+              Login
+            </Button>
+            <div className="register1">
+              <GoogleButton
+                className="g-btn"
+                type="dark"
+                onClick={handleGoogleSignIn}
+              />
+            </div>
+            <hr />
+            <div className="register">
+              <p>Don't have an account?</p>
+              <Link className="welcome1" to="/registration">
+                <h5 className="">Sign up</h5>
               </Link>
-               </div>
+            </div>
 
             {/* <Form.Group
             
@@ -204,12 +210,6 @@ const Login = () => {
                  name="textarea"
                 />
               </Form.Group> */}
-         
-
-          
-
-          
-            
           </Form>
         </div>
       </>

@@ -30,7 +30,7 @@ const Home = () => {
       <hr style={{width: "700px"}}/>
        <ul className='div6'>
          <li ><span style={{fontSize: "20px"}}> Email:</span> { user.email}</li>
-         <li ><span style={{fontSize: "20px"}}> User Id:</span> { user.uid}</li>
+         {/* <li ><span style={{fontSize: "20px"}}> User Id:</span> { user.uid}</li> */}
        </ul>
     </div>
     <div  className='div5'>
