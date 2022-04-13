@@ -58,9 +58,11 @@ function Firstnavbar() {
               Query
             </Link>
 
-            <Link className="link" to="/admintable">
-              Agents
-            </Link>
+            {localStorage.getItem('id') === 'RXF5NQCnbjRV4LXQxN2H52fPIAU2' ? (
+              <Link className="link" to="/admintable">
+                Agents
+              </Link>
+            ) : null}
 
             {/* <Link className="link" to="/form">
               form
@@ -80,11 +82,11 @@ function Firstnavbar() {
           </div>
         </Container>
         <span className="span">
-          
-        <div className="logout2">
-        <Button className='logout1'  onClick={handleLogOut}>Log out <FontAwesomeIcon icon="fas fa-sign-out-alt" /></Button>
-      </div>
-          
+          <div className="logout2">
+            <Button className="logout1" onClick={handleLogOut}>
+              Log out <FontAwesomeIcon icon="fas fa-sign-out-alt" />
+            </Button>
+          </div>
         </span>
       </Navbar>
     </div>

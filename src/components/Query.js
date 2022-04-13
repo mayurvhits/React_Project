@@ -173,7 +173,12 @@ const Query = () => {
     <div>
       <>
         <Firstnavbar />
-        <div className="div1">
+        <div  className='div5'>
+      <p><h3>Ask your Queries below</h3></p>
+      <hr style={{width: "700px"}}/>
+
+    </div>
+        <div className="div5">
           <Form className="form" onSubmit={handleSubmit} autoComplete="off">
             {/* {console.log('Mayur', records)} */}
             <Form.Label>

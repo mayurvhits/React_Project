@@ -38,6 +38,10 @@ function Routes() {
 
           <Route path={'/agentregistration'} element={<AgentRegistration />} />
           {/* <Route  path={'/admin'} element={AdminLogin} /> */}
+
+          {/* {localStorage.getItem('id') === 'RXF5NQCnbjRV4LXQxN2H52fPIAU2' ? 
+          <Route  path={'/admintable'} element={<AdminTable />} /> : null} */}
+          
           <Route  path={'/admintable'} element={<AdminTable />} />
           <Route  path={'/usertable'} element={<UserTable />} />
           <Route  path={'/querytable'} element={<QueryTable />} />
