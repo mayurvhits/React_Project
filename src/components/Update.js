@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import fireDb from '../firebase';
-import {toast} from "react-toastify"
-
+import { toast } from 'react-toastify';
 
 const initialState = {
   name: '',
@@ -10,10 +9,7 @@ const initialState = {
   contact: '',
 };
 
-
-
 const Update = () => {
-    
   const [state, setstate] = useState(initialState);
   const [data, setData] = useState({});
 
@@ -21,7 +17,7 @@ const Update = () => {
 
   const navigate = useNavigate();
 
-  const {id} = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     fireDb.child('contact').on('value', (snapshot) => {
@@ -34,58 +30,57 @@ const Update = () => {
       }
     });
 
-    return  () => {
-    setData({});
-    console.log("hi3");
+    return () => {
+      setData({});
+      console.log('hi3');
     };
   }, [id]);
 
   useEffect(() => {
-     if(id){
-         setstate({...data[id]})
-     }else{
-         setstate({...initialState})
-     }
+    if (id) {
+      setstate({ ...data[id] });
+    } else {
+      setstate({ ...initialState });
+    }
 
-     return () => {
-         setstate({...initialState})
-     }
-  }, [id, data])
+    return () => {
+      setstate({ ...initialState });
+    };
+  }, [id, data]);
 
   const handleInputChange = (e) => {
-        const{name, value} = e.target;
-        setstate({...state, [name]: value});
-  }
+    const { name, value } = e.target;
+    setstate({ ...state, [name]: value });
+  };
 
   const handleSubmit = (e) => {
-    console.log("submit");
+    console.log('submit');
     e.preventDefault();
-    if(!name || !email || !contact){
-        toast.error("Please provide value in each input field")
-    }else{
-        if(!id){
-
-            fireDb.child("contact").push(state, (err) => {
-                if(err){
-                    toast.error(err);
-                }else{
-                    toast.success("Contact added successfully")
-                }
-            });
-        }else{
-            fireDb.child(`contact/${id}`).set(state, (err) => {
-                if(err){
-                    toast.error(err);
-                }else{
-                    toast.success("Contact updated successfully")
-                }
-            });
-        }
-        setTimeout(() => navigate("/table"), 500)
+    if (!name || !email || !contact) {
+      toast.error('Please provide value in each input field');
+    } else {
+      if (!id) {
+        fireDb.child('contact').push(state, (err) => {
+          if (err) {
+            toast.error(err);
+          } else {
+            toast.success('Contact added successfully');
+          }
+        });
+      } else {
+        fireDb.child(`contact/${id}`).set(state, (err) => {
+          if (err) {
+            toast.error(err);
+          } else {
+            toast.success('Contact updated successfully');
+          }
+        });
+      }
+      setTimeout(() => navigate('/table'), 500);
     }
-  }
+  };
   return (
-    <div style={{marginTop:"200px"}}>
+    <div style={{ marginTop: '200px' }}>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input
@@ -93,29 +88,29 @@ const Update = () => {
           id="name"
           name="name"
           placeholder="Your Name.."
-          value={name || ""}
+          value={name || ''}
           onChange={handleInputChange}
         />
-          <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           id="email"
           name="email"
           placeholder="Your Email.."
-          value={email || ""}
+          value={email || ''}
           onChange={handleInputChange}
         />
-          <label htmlFor="contact">Contact</label>
+        <label htmlFor="contact">Contact</label>
         <input
           type="number"
           id="contact"
           name="contact"
           placeholder="Your Contact.."
-          value={contact || ""}
+          value={contact || ''}
           onChange={handleInputChange}
         />
-        
-        <input type="submit" value={id ? "Update" : "Save"} />
+
+        <input type="submit" value={id ? 'Update' : 'Save'} />
       </form>
     </div>
   );

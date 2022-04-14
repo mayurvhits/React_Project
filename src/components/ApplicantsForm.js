@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import fireDb from '../firebase';
+import { storage } from '../firebase';
+import { ref, uploadBytes } from 'firebase/storage';
+import { v4 } from 'uuid';
 import { toast } from 'react-toastify';
 import { Button, Form } from 'react-bootstrap';
-import Firstnavbar from './Firstnavbar';
 
 const initialState = {
   name: '',
@@ -14,55 +16,9 @@ const initialState = {
 };
 
 const ApplicantsForm = () => {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     fname: '',
-  //     lname: '',
-  //     email: '',
-  //     password: '',
-  //     confirmPassword: '',
-  //   };
-  // }
-
-  // handleFnameChange = (event) => {
-  //   this.setState({
-  //     fname: event.target.value,
-  //   });
-  // };
-
-  // handleLnameChange = (event) => {
-  //   this.setState({
-  //     lname: event.target.value,
-  //   });
-  // };
-
-  // handleEmailChange = (event) => {
-  //   this.setState({
-  //     email: event.target.value,
-  //   });
-  // };
-
-  // handlePasswordChange = (event) => {
-  //   this.setState({
-  //     password: event.target.value,
-  //   });
-  // };
-
-  // handleConfirmpasswordChange = (event) => {
-  //   this.setState({
-  //     confirmPassword: event.target.value,
-  //   });
-  // };
-
-  // handleSubmit = () => {
-  //   alert(
-  //     `${this.state.fname} ${this.state.lname} ${this.state.email} ${this.state.password} ${this.state.confirmPassword}`
-  //   );
-  // };
-
   const [state, setstate] = useState(initialState);
+  const [imageUpload, setImageUpload] = useState(null);
+
   const [data, setData] = useState({});
 
   const { name, phone, city, file } = state;
@@ -75,16 +31,13 @@ const ApplicantsForm = () => {
     fireDb.child('contact').on('value', (snapshot) => {
       if (snapshot.val() !== null) {
         setData({ ...snapshot.val() });
-        // console.log('hi1');
       } else {
         setData({});
-        // console.log('hi2');
       }
     });
 
     return () => {
       setData({});
-      // console.log("hi3");
     };
   }, [id]);
 
@@ -111,22 +64,55 @@ const ApplicantsForm = () => {
     if (!name || !phone || !city) {
       toast.error('Please provide value in each input field');
     } else {
-      fireDb.child('contact').push({...state, id: localStorage.getItem('id')}, (err) => {
-        if (err) {
-          toast.error(err);
-        } else {
-          toast.success('Contact added successfully');
-        }
-      });
+      fireDb
+        .child('contact')
+        .push({ ...state, id: localStorage.getItem('id') }, (err) => {
+          if (err) {
+            toast.error(err);
+          } else {
+            toast.success('Contact added successfully');
+          }
+        });
       setTimeout(() => navigate('/usertable'), 500);
     }
+
+    if (imageUpload == null) return;
+    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      toast.success('File uploaded successfully');
+      });
   };
+
+  // const uploadFile = () => {
+    
+  // };
+
+//   const handleChange = (e) => {
+//     if(e.target.files[0]){
+//       setImage(e.target.files[0])
+//     }
+//   }
+
+//   const handleUpload = () => {
+//     const uploadTask = storage.ref(`image/${image.name}`).put(image);
+//     uploadTask.on(
+//       "state_changed",
+//       snapshot => {},
+//       error => {
+//         console.log(error);
+//       },
+//       () => {
+//         storage.ref("images").child(image.name).getDownloadURL().then(url => {});
+//       }
+//     )
+//   }
+
+//  console.log("image", image);
+
   return (
     <>
-      {/* <Firstnavbar></Firstnavbar> */}
       <div className="div5">
         <Form className="form" onSubmit={handleSubmit} autoComplete="off">
-          {/* {console.log('Mayur', data)} */}
           <Form.Label>
             <h1 className="login">Fill up your info</h1>
           </Form.Label>
@@ -166,14 +152,21 @@ const ApplicantsForm = () => {
           <Form.Group className="mb-3">
             <Form.Label>Upload document</Form.Label>
             <Form.Control
-              id="file"
+              id="file"  
               type="file"
               value={file || ''}
-              onChange={handleInputChange}
+              onChange={(event) => {
+                setImageUpload(event.target.files[0]);
+              }}
               name="file"
               multiple
             />
           </Form.Group>
+
+          {/* <input type="file" onChange={(event) => {
+          setImageUpload(event.target.files[0]);
+        }} />
+          <button onClick={uploadFile}>upload</button> */}
 
           <Button
             className="button"

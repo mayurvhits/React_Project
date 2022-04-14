@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import fireDb from '../firebase';
 import { Link, useNavigate } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
-import {toast} from "react-toastify"
-import { Button } from 'bootstrap';
+import { toast } from 'react-toastify';
 import Firstnavbar from './Firstnavbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faEye } from '@fortawesome/free-solid-svg-icons';
@@ -18,16 +17,16 @@ const AdminTable = () => {
       if (snapshot.val() !== null) {
         // console.log(snapshot.val());
         setData({ ...snapshot.val() });
-        console.log('hi1');
+        // console.log('hi1');
       } else {
         setData({});
-        console.log('hi2');
+        // console.log('hi2');
       }
     });
 
     return () => {
       setData({});
-      console.log('hi3');
+      // console.log('hi3');
     };
   }, []);
 
@@ -53,28 +52,28 @@ const AdminTable = () => {
     navigate(`/viewinfo/${id}`);
   };
 
-  const goBackApplicantsTable = () => {
-    navigate('/admintable');
-  };
-
   return (
     <>
       <Firstnavbar />
       <div className="tableButton">
         <div>
-        <button className="button btn btn-primary buzz-out-on-hover">Applicants Info</button>
+          <button className="button btn btn-primary buzz-out-on-hover">
+            Applicants Info
+          </button>
         </div>
         <Link to={'/querytable'}>
-          <button className="button5 btn btn-primary buzz-out-on-hover">Query Info</button>
+          <button className="button5 btn btn-primary buzz-out-on-hover">
+            Query Info
+          </button>
         </Link>
       </div>
-      <h4><p className='home3'>Applicants information :</p></h4>
+      <h4>
+        <p className="home3">Applicants information :</p>
+      </h4>
       <hr />
       <div className="table1">
         <Table striped bordered hover>
           <thead>
-            {/* <div className='clientTitle'><h1>Client list</h1></div> */}
-            {/* <caption >Client list</caption> */}
             <tr>
               <th>Id</th>
               <th>Applicants Name</th>
@@ -85,12 +84,6 @@ const AdminTable = () => {
             </tr>
           </thead>
           <tbody>
-            {/* <tr>
-            <td>10</td>
-            <td>roy</td>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr> */}
             {Object.keys(data).map((id, index) => {
               return (
                 <tr key={id}>
@@ -101,23 +94,23 @@ const AdminTable = () => {
                   <td>{data[id].file}</td>
                   <td>
                     <div>
-                      <button
-                        className=""
-                        onClick={() => viewUser(id)}
-                      >
-                        <FontAwesomeIcon className='fonticon buzz-out-on-hover' icon="fa-solid fa-eye" />
+                      <button className="" onClick={() => viewUser(id)}>
+                        <FontAwesomeIcon
+                          className="fonticon buzz-out-on-hover"
+                          icon="fa-solid fa-eye"
+                        />
                       </button>
-                      <button
-                        className="home3 "
-                        onClick={() => editUser(id)}
-                      >
-                        <FontAwesomeIcon className='fonticon buzz-out-on-hover' icon="fas fa-edit" />
+                      <button className="home3 " onClick={() => editUser(id)}>
+                        <FontAwesomeIcon
+                          className="fonticon buzz-out-on-hover"
+                          icon="fas fa-edit"
+                        />
                       </button>
-                      <button
-                        className="home3"
-                        onClick={() => deleteUser(id)}
-                      >
-                        <FontAwesomeIcon className='fonticon buzz-out-on-hover' icon="fa-solid fa-trash" />
+                      <button className="home3" onClick={() => deleteUser(id)}>
+                        <FontAwesomeIcon
+                          className="fonticon buzz-out-on-hover"
+                          icon="fa-solid fa-trash"
+                        />
                       </button>
                     </div>
                   </td>

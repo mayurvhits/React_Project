@@ -14,17 +14,15 @@ const About = () => {
             <h4>About us</h4>
             <h3>Welcome to RTO consultancy</h3>
             <p>
-              We provide all types of RTO service in all Gujart state.
-              Service types- Driving licence, Duplicate RC book, Hypothecation
-              deletion (HP) New registration of vehicle, No objection
-              certificate (NOC), international Driving License service &
-              Ownership transfer. Payment of road tax & all types registration
-              of vehicle
+              We provide all types of RTO service in all Gujart state. Service
+              types- Driving licence, Duplicate RC book, Hypothecation deletion
+              (HP) New registration of vehicle, No objection certificate (NOC),
+              international Driving License service & Ownership transfer.
+              Payment of road tax & all types registration of vehicle
             </p>
           </div>
         </div>
       </div>
-      {/* <div className="footer">hi</div> */}
     </div>
   );
 };

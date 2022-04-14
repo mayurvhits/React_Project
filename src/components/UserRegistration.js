@@ -3,24 +3,21 @@ import { Button, Form, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-// import { useNavigate } from '@reach/router';
 const UserRegistration = () => {
-  // const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { signUp } = useAuth();
   const navigate = useNavigate();
-  console.log(useAuth(),);
+  console.log(useAuth());
 
-  const handleSubmit = async (e) => { 
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
       await signUp(email, password);
-      navigate('/')
-      alert('Thanks! your account has been successfully created')
-      // navigate('/');
+      navigate('/');
+      alert('Thanks! your account has been successfully created');
     } catch (err) {
       setError(err.message);
     }
@@ -69,12 +66,7 @@ const UserRegistration = () => {
           <label className="lable">
             Register as a agent
             <Link to="/agentregistration">
-              <input
-                className="checkbox1"
-                type="checkbox"
-                // defaultChecked
-                // onChange={handleInput}
-              />
+              <input className="checkbox1" type="checkbox" />
             </Link>
           </label>
         </div>

@@ -8,7 +8,6 @@
   box-shadow: 3px 2px rgb(226, 226, 226);
   border-style: none;
   width: 500px;
-
 }
 
 .navbar {
@@ -164,19 +163,26 @@ Link:hover {
 }
 
 @keyframes example {
-  0%   { left:0px; top:0px;}
+  0% {
+    left: 0px;
+    top: 0px;
+  }
   /* 25%  { left:1200px; top:0px;} */
-  50%  { left:1200px; top:0px; transform: rotate(-45deg);}
+  50% {
+    left: 1200px;
+    top: 0px;
+    transform: rotate(-45deg);
+  }
   /* 75%  { left:0px; top:200px;} */
   /* 100% { left:0px; top:0px; transform: ;} */
 }
 
-.welcome{
+.welcome {
   text-decoration: none !important;
   color: white !important;
 }
 
-.welcome1{
+.welcome1 {
   text-decoration: none !important;
 }
 
@@ -194,54 +200,52 @@ Link:hover {
   margin-top: 15px;
 }
 
-.checkbox{
+.checkbox {
   margin-top: 5px;
   width: 160px;
   display: flex;
-  
 }
 
-.lable{
+.lable {
   display: flex;
   width: 215px;
   justify-content: space-between;
   align-items: center;
-
 }
 
-.checkbox1{
+.checkbox1 {
   display: flex;
   align-content: center;
 }
 
-.table1{
-  overflow-y:auto;
+.table1 {
+  overflow-y: auto;
   /* width: 100%; */
-    height:100%;
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    margin-left: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
-.clientTitle{
+.clientTitle {
   margin-bottom: 30px;
 }
 
-.span{
+.span {
   margin-right: 20px;
 }
 
-.hey{
+.hey {
   margin-right: 10px;
 }
 
-.show{
+.show {
   margin-top: 50px;
   margin-left: 50px;
 }
 
-.div1{
+.div1 {
   /* width: 100vh; */
   height: 90vh;
   display: flex !important;
@@ -250,7 +254,7 @@ Link:hover {
   flex-direction: column;
 }
 
-.div5{
+.div5 {
   /* width: 100vh; */
   height: 40vh;
   display: flex !important;
@@ -260,7 +264,7 @@ Link:hover {
   /* margin-bottom: 20px !important; */
 }
 
-.div7{
+.div7 {
   /* width: 100vh; */
   margin-top: 70px;
   display: flex !important;
@@ -270,9 +274,7 @@ Link:hover {
   /* margin-bottom: 20px !important; */
 }
 
-
-
-.div6{
+.div6 {
   /* width: 100vh; */
   /* height: 40vh; */
   display: flex !important;
@@ -282,59 +284,53 @@ Link:hover {
   margin-bottom: 20px !important;
 }
 
-
-
-.alert{
+.alert {
   width: 285px;
   margin-left: 0px;
-
-
 }
 
-.welcome:hover{
+.welcome:hover {
   color: blue;
 }
 
-.crud{
+.crud {
   margin-left: 20px;
-  
 }
 
-.crud1{
+.crud1 {
   display: flex;
   justify-content: space-between;
 }
 
-.op1{
- width: 30%;
- display: flex;
- flex-direction: column;
- 
- 
- align-content: center;
- margin: 0 auto
+.op1 {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+
+  align-content: center;
+  margin: 0 auto;
 }
 
-.op2{
+.op2 {
   height: 50px;
   background: #212529;
   color: white;
   text-align: center;
 }
 
-.p1{
+.p1 {
   height: 50px;
   font-size: 20px;
   display: flex;
-  align-items:center ;
+  align-items: center;
   justify-content: center;
 }
 
-.op3{
+.op3 {
   padding: 4px 16px;
-} 
+}
 
-.view-b{
+.view-b {
   margin-top: 20px;
 }
 
@@ -344,24 +340,24 @@ Link:hover {
   margin-top: 20px;
 }
 
-.homepagediv{
+.homepagediv {
   height: 500px;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly ;
+  justify-content: space-evenly;
 }
 
-.home2{
+.home2 {
   margin-left: 20%;
 }
 
-.logout2{
+.logout2 {
   display: flex;
   justify-content: center;
 }
 
-.logout1{
+.logout1 {
   width: 100px;
   background-color: #646464 !important;
   border-style: none !important;
@@ -369,7 +365,7 @@ Link:hover {
   /* font-weight: bold !important; */
 }
 
-.tableButton{
+.tableButton {
   height: 70px;
   width: 100%;
   display: flex;
@@ -379,39 +375,35 @@ Link:hover {
   margin-left: 20px;
 }
 
-.home3{
+.home3 {
   margin-left: 20px;
-  
 }
 
-.danger{
+.danger {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: initial ;
+  height: initial;
 }
 
-.footer1{
+.footer1 {
   height: 20px;
 }
 
-
-.fonticon{
-	/* padding: 3px 0px; */
-	/* margin: 5px; */
+.fonticon {
+  /* padding: 3px 0px; */
+  /* margin: 5px; */
   margin-bottom: 4px;
-	/* display: inline-block; */
-	color: #000;
-	/* background: white; */
+  /* display: inline-block; */
+  color: #000;
+  /* background: white; */
   text-decoration: none;
 }
 
-.fonticon:hover{
-	text-decoration: none;
-	color: #000;
+.fonticon:hover {
+  text-decoration: none;
+  color: #000;
 }
-
-
 
 @-webkit-keyframes buzz-out-on-hover {
   10% {
@@ -504,7 +496,9 @@ Link:hover {
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
-.buzz-out-on-hover:hover, .buzz-out-on-hover:focus, .buzz-out-on-hover:active {
+.buzz-out-on-hover:hover,
+.buzz-out-on-hover:focus,
+.buzz-out-on-hover:active {
   -webkit-animation-name: buzz-out-on-hover;
   animation-name: buzz-out-on-hover;
   -webkit-animation-duration: 0.75s;
@@ -513,4 +507,10 @@ Link:hover {
   animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+}
+
+.hr3{
+  width: 700px;
+  display: flex !important;
+  justify-content: center !important;
 }

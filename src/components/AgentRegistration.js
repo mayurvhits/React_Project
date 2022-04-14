@@ -1,56 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
 
 const AgentRegistration = () => {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     fname: '',
-  //     lname: '',
-  //     email: '',
-  //     password: '',
-  //     confirmPassword: '',
-  //   };
-  // }
-
-  // handleFnameChange = (event) => {
-  //   this.setState({
-  //     fname: event.target.value,
-  //   });
-  // };
-
-  // handleLnameChange = (event) => {
-  //   this.setState({
-  //     lname: event.target.value,
-  //   });
-  // };
-
-  // handleEmailChange = (event) => {
-  //   this.setState({
-  //     email: event.target.value,
-  //   });
-  // };
-
-  // handlePasswordChange = (event) => {
-  //   this.setState({
-  //     password: event.target.value,
-  //   });
-  // };
-
-  // handleConfirmpasswordChange = (event) => {
-  //   this.setState({
-  //     confirmPassword: event.target.value,
-  //   });
-  // };
-
-  // handleSubmit = () => {
-  //   alert(
-  //     `${this.state.fname} ${this.state.lname} ${this.state.email} ${this.state.password} ${this.state.confirmPassword}`
-  //   );
-  // };
-
   const [userRegistraion, setuserRegistraion] = useState({
     fname: '',
     lname: '',
@@ -83,7 +34,7 @@ const AgentRegistration = () => {
   return (
     <div>
       <>
-        <div className='div1'>
+        <div className="div1">
           <Form className="form" onSubmit={handleSubmit} autoComplete="off">
             {console.log('Mayur', records)}
             <Form.Label>
@@ -146,14 +97,7 @@ const AgentRegistration = () => {
             <div className="checkbox">
               <label className="lable">
                 Register as a agent
-                {/* <Link  to="/Adminregistration"> */}
-                <input
-                  className="checkbox1"
-                  type="checkbox"
-                  defaultChecked
-                  // onChange={handleInput}
-                />
-                {/* </Link> */}
+                <input className="checkbox1" type="checkbox" defaultChecked />
               </label>
             </div>
           </Form>

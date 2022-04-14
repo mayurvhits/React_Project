@@ -33,42 +33,12 @@ function SingleData() {
 
     getUser();
   }, []);
-  
+
   return (
     <div>
       <>
         <div className="div1">
-          {/* <input
-            placeholder="Name..."
-            onChange={(event) => {
-              setNewName(event.target.value);
-            }}
-          />
-          <input
-            type="number"
-            placeholder="Phone no..."
-            onChange={(event) => {
-              setNewPhone(event.target.value);
-            }}
-          />
-          <input
-            type="text"
-            placeholder="City name..."
-            onChange={(event) => {
-              setNewCity(event.target.value);
-            }}
-          />
-          <input
-            type="file"
-            placeholder="select doc..."
-            onChange={(event) => {
-              setNewFile(event.target.value);
-            }}
-          />
-
-          <button onClick={createUser}>Creat User</button> */}
-
-          <Form className="form" autoComplete="off" >
+          <Form className="form" autoComplete="off">
             {console.log('Mayur', users)}
             <Form.Label>
               <h1 className="login">Fill up your info</h1>
@@ -117,70 +87,53 @@ function SingleData() {
             <Button
               className="button"
               variant="primary"
-               onClick={() => createUser()}
-               disabled={!(newCity && newPhone && newName)}
+              onClick={() => createUser()}
+              disabled={!(newCity && newPhone && newName)}
             >
               Submit
             </Button>
           </Form>
-
-          {/* {users.map((user) => {
-        return (
-          <div>
-            <h6>Name: {user.name}</h6>
-            <h6>Age: {user.phone}</h6>
-            <h6>Age: {user.city}</h6>
-            <h6>Age: {user.file}</h6>
-            
-          </div>
-          
-        );
-      })} */}
         </div>
         <>
-        <div className="table1">
-      
-      <Table striped bordered hover>
-        <thead>
-      <div className='clientTitle'><h1>Client list</h1></div>
-          {/* <caption >Client list</caption> */}
-          <tr>
-            <th>Id</th>
-            <th>Applicants Name</th>
-            <th>Phone number</th>
-            <th>City</th>
-            <th>Documents</th>
-            {/* <th>action</th> */}
-          </tr>
-        </thead>
-        <tbody>
-          {/* <tr>
-            <td>10</td>
-            <td>roy</td>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr> */}
-          {
-            users.map((user, index) => (
-              <tr>
-                <th scope='row'>{index + 1}</th>
-              <td>{user.name}</td>
-              <td>{user.phone}</td>
-              <td>{user.city}</td>
-              <td>{user.file}</td>
-              <td>
-                <div>
-                <Link className="btn btn-primary hey" to={"/"} >View</Link>
-                <Link className="btn btn-outline-primary hey " to={"/"}>Edit</Link> 
-                <Link className="btn btn-danger " >Delete</Link>
-               </div>
-              </td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </Table>
-    </div></>
+          <div className="table1">
+            <Table striped bordered hover>
+              <thead>
+                <div className="clientTitle">
+                  <h1>Client list</h1>
+                </div>
+                <tr>
+                  <th>Id</th>
+                  <th>Applicants Name</th>
+                  <th>Phone number</th>
+                  <th>City</th>
+                  <th>Documents</th>
+                </tr>
+              </thead>
+              <tbody>
+                {users.map((user, index) => (
+                  <tr>
+                    <th scope="row">{index + 1}</th>
+                    <td>{user.name}</td>
+                    <td>{user.phone}</td>
+                    <td>{user.city}</td>
+                    <td>{user.file}</td>
+                    <td>
+                      <div>
+                        <Link className="btn btn-primary hey" to={'/'}>
+                          View
+                        </Link>
+                        <Link className="btn btn-outline-primary hey " to={'/'}>
+                          Edit
+                        </Link>
+                        <Link className="btn btn-danger ">Delete</Link>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+        </>
       </>
     </div>
   );

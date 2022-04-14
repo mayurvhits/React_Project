@@ -106,6 +106,8 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import GoogleButton from 'react-google-button';
+import { toast } from 'react-toastify';
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -118,8 +120,9 @@ const Login = () => {
     e.preventDefault();
     setError('');
     try {
-      console.log('Logged in Successfully');
+      // console.log('Logged in Successfully');
       const userObject = await logIn(email, password);
+      toast.success('Logged in successfully');
       console.log(userObject);
       // console.log(userObject.user.email);
       // console.log(userObject.user.accessToken);
@@ -131,7 +134,8 @@ const Login = () => {
         navigate('/home');
       }
     } catch (err) {
-      setError(err.message);
+      toast.error('Invalid email/password');             // Custom error
+      // setError(err.message);
     }
   };
 
@@ -195,21 +199,6 @@ const Login = () => {
                 <h5 className="">Sign up</h5>
               </Link>
             </div>
-
-            {/* <Form.Group
-            
-                controlId="Textarea"
-                
-                className="mb-3"
-              >
-                <Form.Control
-                 type="textarea"
-                 placeholder="Ask your queries here"
-                 value={userRegistraion.textarea}
-                 onChange={handleInput}
-                 name="textarea"
-                />
-              </Form.Group> */}
           </Form>
         </div>
       </>

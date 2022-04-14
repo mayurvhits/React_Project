@@ -1,31 +1,30 @@
 {
+  "posts": [
+    {
+      "id": "1",
+      "title": "Post one",
+      "body": "This is a post body",
+      "publishedAt": "11-03-2022"
+    },
+    {
+      "id": "2",
+      "title": "Post two",
+      "body": "This is a post body",
+      "publishedAt": "11-03-2022"
+    },
+    {
+      "id": "3",
+      "title": "Post three",
+      "body": "This is a post body",
+      "publishedAt": "11-03-2022"
+    }
+  ],
 
-    "posts":[
-        {
-            "id": "1",
-            "title": "Post one",
-            "body": "This is a post body",
-            "publishedAt": "11-03-2022"
-        },
-        {
-            "id": "2",
-            "title": "Post two",
-            "body": "This is a post body",
-            "publishedAt": "11-03-2022"
-        },
-        {
-            "id": "3",
-            "title": "Post three",
-            "body": "This is a post body",
-            "publishedAt": "11-03-2022"
-        }
-    ],
-    
-    "users": [
-        {
-           "id": "1",
-           "name": "Mayur",
-           "email": "hi@hi.com"
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "name": "Mayur",
+      "email": "hi@hi.com"
+    }
+  ]
 }

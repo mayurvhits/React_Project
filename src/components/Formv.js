@@ -15,57 +15,40 @@ function Formv() {
   };
 
   const postData = async (e) => {
-      e.preventDefault()
+    e.preventDefault();
 
-      const {name, email} = user;
+    const { name, email } = user;
 
-      if(name && email){
-        const res = await fetch("https://auth-development-7e0b5-default-rtdb.firebaseio.com/authDevelopment.json", {
-          method: "POST",
+    if (name && email) {
+      const res = await fetch(
+        'https://auth-development-7e0b5-default-rtdb.firebaseio.com/authDevelopment.json',
+        {
+          method: 'POST',
           headers: {
-            "Content-Type":"application/json",
+            'Content-Type': 'application/json',
           },
-          body:JSON.stringify({
+          body: JSON.stringify({
             name,
             email,
-          })
-        });
-        console.log("First API")
-        if(res){
-          setUser({
-            name: '',
-            email: '',
-          });
-          alert("Data stored successfully")
+          }),
         }
+      );
+      console.log('First API');
+      if (res) {
+        setUser({
+          name: '',
+          email: '',
+        });
+        alert('Data stored successfully');
       }
-      else{
-        console.log("in else part")
-         alert("data is not submitted")
-      }
-
-      // const res = await fetch("https://auth-development-7e0b5-default-rtdb.firebaseio.com/authDevelopment.json", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type":"application/jason",
-      //   },
-      //   body:JSON.stringify({
-      //     name,
-      //     email,
-      //   })
-      // });
-
-      // if(res){
-      //   setUser({
-      //     name: '',
-      //     email: '',
-      //   });
-      //   alert("Data stored successfully")
-      // }
-  }
+    } else {
+      console.log('in else part');
+      alert('data is not submitted');
+    }
+  };
   return (
     <div>
-      <form method='POST'>
+      <form method="POST">
         <input
           type="text"
           name="name"

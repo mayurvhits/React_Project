@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, Alert } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 
 const Login = () => {
   const history = useHistory();
@@ -10,16 +8,14 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { logIn } = useAuth();
-  // const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
       await logIn(email, password);
-      history.push('/Applicants')
-      alert('log in successfully')
-      // navigate('/');
+      history.push('/Applicants');
+      alert('log in successfully');
     } catch (err) {
       setError(err.message);
     }
@@ -54,13 +50,9 @@ const Login = () => {
         <Button className="button" variant="primary" type="submit">
           Log in
         </Button>
-
-        
       </Form>
     </div>
   );
 };
-  
-
 
 export default Login;

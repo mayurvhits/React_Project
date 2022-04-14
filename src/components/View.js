@@ -1,26 +1,29 @@
-import React, {useState, useEffect} from 'react'
-import fireDb from "../firebase"
-import { useParams, Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react';
+import fireDb from '../firebase';
+import { useParams, Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 const View = () => {
-    const [user, setUser] = useState({});
+  const [user, setUser] = useState({});
 
-    const {id} = useParams();
+  const { id } = useParams();
 
-    useEffect(() => {
-        fireDb.child(`contact/${id}`).get().then((snapshot) => {
-            if(snapshot.exists()){
-                setUser({...snapshot.val()})
-            }else{
-                setUser({})
-            }
-        })
-    }, [id]);
+  useEffect(() => {
+    fireDb
+      .child(`contact/${id}`)
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setUser({ ...snapshot.val() });
+        } else {
+          setUser({});
+        }
+      });
+  }, [id]);
 
-    console.log("users", user);
+  console.log('users', user);
   return (
-      <>
-    {/* <div className='show' >
+    <>
+      {/* <div className='show' >
         <Link>
         </Link>
         <h1 className='display-2'>User Id: {id}</h1>
@@ -36,36 +39,36 @@ const View = () => {
             </Link>
         </ul>
     </div> */}
-    <div style={{marginTop: "150px"}}>
-       <div className='op1'>
-        <div className='op2'>
-           <p className='p1'>User contact details</p>
+      <div style={{ marginTop: '150px' }}>
+        <div className="op1">
+          <div className="op2">
+            <p className="p1">User contact details</p>
+          </div>
+          <div className="op3">
+            <strong>Id:</strong>
+            <span>{id}</span>
+            <br />
+            <br />
+            <strong>Name:</strong>
+            <span>{user.name}</span>
+            <br />
+            <br />
+            <strong>Email:</strong>
+            <span>{user.email}</span>
+            <br />
+            <br />
+            <strong>Contact:</strong>
+            <span>{user.contact}</span>
+            <br />
+            <br />
+            <Link to="/table">
+              <Button className="btn btn-edit">Go back</Button>
+            </Link>
+          </div>
         </div>
-        <div className='op3'>
-          <strong>Id:</strong>
-          <span>{id}</span>
-          <br />
-          <br />
-          <strong>Name:</strong>
-          <span>{user.name}</span>
-          <br />
-          <br />
-          <strong>Email:</strong>
-          <span>{user.email}</span>
-          <br />
-          <br />
-          <strong>Contact:</strong>
-          <span>{user.contact}</span>
-          <br />
-          <br />
-          <Link to="/table">
-          <Button className='btn btn-edit'>Go back</Button>
-          </Link>
-        </div>
-       </div>
-    </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default View
+export default View;

@@ -4,12 +4,11 @@ import { useAuth } from '../context/AuthContext';
 
 const ProtectedRoute = ({ children }) => {
   let { user } = useAuth();
-  // const history = useHistory();
   if (!user) {
-     return <Navigate to= "/" />
-  }else{
-  return children;
-}
+    return <Navigate to="/" />;
+  } else {
+    return children;
+  }
 };
 
 export default ProtectedRoute;

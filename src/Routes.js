@@ -28,7 +28,6 @@ function Routes() {
     <>
           <AuthProvider>
       <Router>
-        {/* <Firstnavbar></Firstnavbar> */}
         <ToastContainer position="top-center" />
         <Routess>
           <Route path={'/firstnavabar'} element={<Firstnavbar />}/>

@@ -65,13 +65,13 @@ const QueryTable = () => {
           <button className="button5 btn btn-primary">Query Info</button>
         </div>
       </div>
-      <h4><p className='home3'>Query information :</p></h4>
+      <h4>
+        <p className="home3">Query information :</p>
+      </h4>
       <hr />
       <div className="table1">
         <Table striped bordered hover>
           <thead>
-            {/* <div className='clientTitle'><h1>Client list</h1></div> */}
-            {/* <caption >Client list</caption> */}
             <tr>
               <th>Id</th>
               <th>Applicants Name</th>
@@ -89,13 +89,8 @@ const QueryTable = () => {
                   <td>{data[id].email}</td>
                   <td>{data[id].query}</td>
                   <td>
-                    <div className='danger'>
-                      {/* <button className="btn btn-primary hey" onClick={() => viewUser(id)} >View</button>  */}
-                      {/* <button className="btn btn-outline-primary hey " onClick={() => editUser(id)}>Edit</button>  */}
-                      <button
-                        // className="btn btn-danger danger "
-                        onClick={() => deleteUser(id)}
-                      >
+                    <div className="danger">
+                      <button onClick={() => deleteUser(id)}>
                         <FontAwesomeIcon icon="fa-solid fa-trash" />
                       </button>
                     </div>
