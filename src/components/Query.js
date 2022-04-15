@@ -111,7 +111,8 @@ const Query = () => {
             <Form.Group className="mb-3">
               <Form.Control
                 id="query"
-                type="textarea"
+                as='textarea'
+                rows={2}
                 placeholder="Ask your queries here"
                 value={query || ''}
                 onChange={handleInputChange}

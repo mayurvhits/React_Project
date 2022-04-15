@@ -55,14 +55,14 @@ const QueryTable = () => {
       <div className="tableButton">
         <div>
           <button
-            className="button btn btn-primary"
+            className="button btn btn-primary buzz-out-on-hover"
             onClick={() => navigate('/admintable')}
           >
             Applicants Info
           </button>
         </div>
         <div>
-          <button className="button5 btn btn-primary">Query Info</button>
+          <button className="button5 btn btn-primary buzz-out-on-hover">Query Info</button>
         </div>
       </div>
       <h4>
@@ -91,7 +91,7 @@ const QueryTable = () => {
                   <td>
                     <div className="danger">
                       <button onClick={() => deleteUser(id)}>
-                        <FontAwesomeIcon icon="fa-solid fa-trash" />
+                        <FontAwesomeIcon className="fonticon buzz-out-on-hover" icon="fa-solid fa-trash" />
                       </button>
                     </div>
                   </td>
