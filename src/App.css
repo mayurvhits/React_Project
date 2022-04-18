@@ -42,6 +42,15 @@ Link:hover {
 .button {
   background-color: #212529 !important;
   border-color: #212529 !important;
+  height: 50px !important;
+  width: 460px !important;
+}
+
+.button7 {
+  background-color: #212529 !important;
+  border-color: #212529 !important;
+  height: 50px !important;
+  width: 50px !important;
 }
 
 .button5 {
@@ -195,8 +204,8 @@ Link:hover {
 
 .register1 {
   display: flex;
-  width: 230px;
-  justify-content: space-between;
+  width: 460px;
+  justify-content: center;
   margin-top: 15px;
 }
 
@@ -513,4 +522,58 @@ Link:hover {
   width: 700px;
   display: flex !important;
   justify-content: center !important;
+}
+
+.google-flex{
+ /* display: flex; */
+ justify-content: space-between;
+}
+
+.login{
+  display: flex;
+  width: 460px;
+justify-content: center;
+  
+}
+
+.div.button{
+  width: 460px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #000;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
+.App-particles__container {
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 0;
+}
+
+.App-particles__container canvas {
+  transition: 0.2s all ease-in-out;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
 }

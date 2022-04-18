@@ -45,7 +45,9 @@ function Firstnavbar() {
               Query
             </Link>
 
-            {localStorage.getItem('id') === 'T5dOfGoG7BPjgG7HpfEPsc9UJ9Z2' ? (
+
+
+            {localStorage.getItem('id') === 'SDkaYztRCyNDNoB7AMnDhzyPvF22' ? (
               <Link className="link" to="/admintable">
                 Admin
               </Link>

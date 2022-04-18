@@ -127,6 +127,7 @@ const Login = () => {
       // console.log(userObject.user.email);
       // console.log(userObject.user.accessToken);
       localStorage.setItem('id', userObject.user.uid);
+      sessionStorage.setItem('id1', userObject.user.accessToken);
 
       if (userObject.user.email === 'mayurbhalgama2419@gmail.com') {
         navigate('/admintable');
@@ -134,7 +135,7 @@ const Login = () => {
         navigate('/home');
       }
     } catch (err) {
-      toast.error('Invalid email/password');             // Custom error
+      toast.error('Invalid email/password'); // Custom error
       // setError(err.message);
     }
   };
@@ -144,8 +145,10 @@ const Login = () => {
     try {
       await googleSignIn();
       navigate('/home');
+      console.log('hhhhhhhhhh');
     } catch (err) {
       setError(err.message);
+      console.log('aaaaaaaaaaa');
     }
   };
 
@@ -166,18 +169,25 @@ const Login = () => {
             <Form.Label>
               <h1 className="login">Login</h1>
             </Form.Label>
+
+            <Form.Label>
+              Email address
+            </Form.Label>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control
                 type="email"
-                placeholder="Email addresss "
+                placeholder="Enter you email address "
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
 
+            <Form.Label>
+              Password
+            </Form.Label>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Control
                 type="password"
-                placeholder="Password "
+                placeholder="Enter your Password "
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
@@ -185,19 +195,21 @@ const Login = () => {
             <Button className="button" variant="primary" type="submit">
               Login
             </Button>
-            <div className="register1">
-              <GoogleButton
-                className="g-btn"
-                type="dark"
-                onClick={handleGoogleSignIn}
-              />
-            </div>
-            <hr />
+            {/* <hr /> */}
             <div className="register">
               <p>Don't have an account?</p>
               <Link className="welcome1" to="/registration">
                 <h5 className="">Sign up</h5>
               </Link>
+            </div>
+            {/* <hr /> */}
+            <div className="separator">or</div>
+            <div className="register1">
+              <GoogleButton
+                className="button7"
+                type="dark"
+                onClick={handleGoogleSignIn}
+              />
             </div>
           </Form>
         </div>

@@ -57,7 +57,7 @@ const AdminTable = () => {
       <Firstnavbar />
       <div className="tableButton">
         <div>
-          <button className="button btn btn-primary buzz-out-on-hover">
+          <button className="button5 btn btn-primary buzz-out-on-hover">
             Applicants Info
           </button>
         </div>

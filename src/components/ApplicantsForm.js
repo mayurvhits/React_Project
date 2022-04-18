@@ -172,7 +172,7 @@ const ApplicantsForm = () => {
             className="button"
             variant="primary"
             type="submit"
-            disabled={!name}
+            disabled={!city}
             value="save"
           >
             Submit

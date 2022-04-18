@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import fireDb from '../firebase';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import Firstnavbar from './Firstnavbar';
@@ -55,7 +55,7 @@ const QueryTable = () => {
       <div className="tableButton">
         <div>
           <button
-            className="button btn btn-primary buzz-out-on-hover"
+            className="button5 btn btn-primary buzz-out-on-hover"
             onClick={() => navigate('/admintable')}
           >
             Applicants Info
