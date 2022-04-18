@@ -3,6 +3,8 @@ import { Button, Form, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { toast } from 'react-toastify';
+
 const UserRegistration = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,7 +19,8 @@ const UserRegistration = () => {
     try {
       await signUp(email, password);
       navigate('/');
-      alert('Thanks! your account has been successfully created');
+      // alert('Thanks! your account has been successfully created');
+      toast.success('Thanks! your account has been successfully created');
     } catch (err) {
       setError(err.message);
     }

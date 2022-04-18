@@ -32,7 +32,7 @@ const AdminTable = () => {
 
   const deleteUser = (id) => {
     if (
-      window.confirm('Are you sure that you wanted to delete that contact?')
+      window.confirm('Are you sure that you wanted to delete that contact?')  
     ) {
       fireDb.child(`contact/${id}`).remove((err) => {
         if (err) {

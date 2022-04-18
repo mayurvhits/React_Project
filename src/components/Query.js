@@ -63,10 +63,10 @@ const Query = () => {
         if (err) {
           toast.error(err);
         } else {
-          toast.success('Query added successfully');
+          toast.success('Query submitted successfully');
         }
       });
-      setTimeout(() => navigate('/querytable'), 500);
+      setTimeout(() => navigate('/home'), 500);
     }
   };
 
