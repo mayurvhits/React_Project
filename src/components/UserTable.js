@@ -6,8 +6,9 @@ import { toast } from 'react-toastify';
 import Firstnavbar from './Firstnavbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookSquare, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-library.add(faEllipsisV, faEdit);
+library.add(faEllipsisV, faEdit, faFacebookSquare, faTwitter, faInstagram);
 
 const UserTable = () => {
   const [data, setData] = useState({});
@@ -111,6 +112,29 @@ const UserTable = () => {
             </tbody>
           </Table>
         </div>
+      </div>
+      <div class="footer-dark down ">
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col item social ">
+                <a href="https://www.facebook.com/login/" target="_blank">
+                <FontAwesomeIcon className="fonticon1 buzz-out-on-hover" icon="fa-brands fa-facebook-square" />
+                </a>
+                <a href="https://twitter.com/i/flow/login" target="_blank">
+                <FontAwesomeIcon className="fonticon1 buzz-out-on-hover" icon="fa-brands fa-twitter" />
+                </a>
+                
+                <a
+                  href="https://www.instagram.com/accounts/login/?hl=en"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon className="fonticon1 buzz-out-on-hover" icon="fa-brands fa-instagram"/>
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   );

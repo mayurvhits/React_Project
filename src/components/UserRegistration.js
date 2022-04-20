@@ -37,6 +37,9 @@ const UserRegistration = () => {
         <Form.Label>
           <h1 className="login">User Registration</h1>
         </Form.Label>
+        <Form.Label>
+          Email
+        </Form.Label>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             type="email"
@@ -45,6 +48,9 @@ const UserRegistration = () => {
           />
         </Form.Group>
 
+        <Form.Label>
+          Password
+        </Form.Label>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control
             type="password"

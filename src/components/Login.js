@@ -107,6 +107,9 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import GoogleButton from 'react-google-button';
 import { toast } from 'react-toastify';
+import Particlebackground from './Particlebackground';
+import Particle from "react-tsparticles";
+import particlesConfig from '../config/particlesConfig.json'
 
 
 const Login = () => {
@@ -155,6 +158,8 @@ const Login = () => {
   return (
     <div>
       <>
+      {/* <Particle params={particlesConfig} className="App-particles__container" /> */}
+      {/* <Particlebackground /> */}
         <h2>
           <p className="div7">Welcome to RTO consultancy </p>
         </h2>

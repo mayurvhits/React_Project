@@ -1,8 +1,13 @@
 import React from 'react';
 import profile from '../assets/download.jpg';
 import Firstnavbar from './Firstnavbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookSquare, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+library.add(faFacebookSquare, faTwitter, faInstagram );
 const About = () => {
   return (
+    <>
     <div>
       <Firstnavbar/>
       <div className="main">
@@ -24,6 +29,30 @@ const About = () => {
         </div>
       </div>
     </div>
+    <div class="footer-dark ">
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col item social ">
+                <a href="https://www.facebook.com/login/" target="_blank">
+                <FontAwesomeIcon className="fonticon1 buzz-out-on-hover" icon="fa-brands fa-facebook-square" />
+                </a>
+                <a href="https://twitter.com/i/flow/login" target="_blank">
+                <FontAwesomeIcon className="fonticon1 buzz-out-on-hover" icon="fa-brands fa-twitter" />
+                </a>
+                
+                <a
+                  href="https://www.instagram.com/accounts/login/?hl=en"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon className="fonticon1 buzz-out-on-hover" icon="fa-brands fa-instagram"/>
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
   );
 };
 
