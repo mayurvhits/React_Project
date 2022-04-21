@@ -46,12 +46,12 @@ const Home = () => {
       
       <div className="div5">
         <p>
-          <h3>Welcome to Home page</h3>
+          <h3>Welcome</h3>
         </p>
         <hr style={{ width: '700px' }} />
         <ul className="div6">
           <li>
-            <span style={{ fontSize: '20px' }}> Email:</span> {user.email}
+            <span style={{ fontSize: '20px' }}></span> {user.email}
           </li>
         </ul>
       </div>

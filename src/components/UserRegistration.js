@@ -59,13 +59,13 @@ const UserRegistration = () => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        {/* <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control
             type="password"
             placeholder="Confirm Password "
             onChange={(e) => setPassword(e.target.value)}
           />
-        </Form.Group>
+        </Form.Group> */}
 
         <Button className="button" variant="primary" type="submit">
           Sign up
