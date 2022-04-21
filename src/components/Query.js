@@ -145,7 +145,7 @@ const Query = () => {
                 className="buzz-out-on-hover"
                 icon="fa-solid fa-phone"
               />
-              <span className="span2">+91 896547123</span>
+              <span className="span2">+91-896547123</span>
             </div>
             <div className="contact2">
               <FontAwesomeIcon
@@ -159,13 +159,13 @@ const Query = () => {
               <div className="contact2">
                 <a href="https://www.facebook.com/login/" target="_blank">
                   <FontAwesomeIcon
-                    className="fonticon1 buzz-out-on-hover fa-xl social3"
+                    className="fonticon1 buzz-out-on-hover fa-2x social3"
                     icon="fa-brands fa-facebook-square"
                   />
                 </a>
                 <a href="https://twitter.com/i/flow/login" target="_blank">
                   <FontAwesomeIcon
-                    className="fonticon1 buzz-out-on-hover margin-left fa-xl social4"
+                    className="fonticon1 buzz-out-on-hover margin-left fa-2x social4"
                     icon="fa-brands fa-twitter"
                   />
                 </a>
@@ -175,7 +175,7 @@ const Query = () => {
                   target="_blank"
                 >
                   <FontAwesomeIcon
-                    className="fonticon1 buzz-out-on-hover margin-left fa-xl social5"
+                    className="fonticon1 buzz-out-on-hover margin-left fa-2x social5"
                     icon="fa-brands fa-instagram"
                   />
                 </a>

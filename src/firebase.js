@@ -8,6 +8,7 @@ import "firebase/compat/database"
 const firebaseConfig = {
     apiKey: "AIzaSyDCqTBcMbm0a6EB1t4gfcpp86Gu5tDkjX8",
     authDomain: "auth-production-d5e55.firebaseapp.com",
+    databaseURL: "https://auth-production-d5e55-default-rtdb.firebaseio.com",
     projectId: "auth-production-d5e55",
     storageBucket: "auth-production-d5e55.appspot.com",
     messagingSenderId: "507824967789",

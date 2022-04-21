@@ -19,20 +19,25 @@
 
 .link {
   color: white;
-  text-decoration: none;
+  text-decoration: none !important;
   padding: 10px;
+}
+
+.link:hover{
+  color: white !important;
 }
 
 .navlink {
   width: 500px !important;
   align-items: center;
   display: flex;
-
+  margin-left: 25px;
   justify-content: space-around !important;
 }
 
 Link:hover {
   color: yellow !important;
+  
 }
 
 
@@ -50,8 +55,9 @@ Link:hover {
 .button7 {
   background-color: #212529 !important;
   border-color: #212529 !important;
-  height: 50px !important;
-  width: 50px !important;
+  /* border-radius: 5px !important; */
+  /* height: 50px !important; */
+  /* width: 50px !important; */
 }
 
 .button5 {
@@ -135,7 +141,7 @@ Link:hover {
 }
 
 .h11:hover {
-  color: blue;
+  color: white;
 }
 
 .aboutus {

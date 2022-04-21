@@ -148,6 +148,7 @@ const Login = () => {
     try {
       await googleSignIn();
       navigate('/home');
+      toast.success('Logged in successfully');
       console.log('hhhhhhhhhh');
     } catch (err) {
       setError(err.message);

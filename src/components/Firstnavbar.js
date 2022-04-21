@@ -31,24 +31,24 @@ function Firstnavbar() {
         <Container>
           <div className="navlink">
             <Link className="welcome" to="/home">
-              <h4 className="h11">Home</h4>
+              <h4 className="h11 buzz-out-on-hover">Home</h4>
             </Link>
-            <Link className="link" to="/About">
+            <Link className="link buzz-out-on-hover" to="/About">
               About us
             </Link>
 
-            <Link className="link" to="/usertable">
+            <Link className="link buzz-out-on-hover" to="/usertable">
               User info
             </Link>
 
-            <Link className="link" to="/query">
+            <Link className="link buzz-out-on-hover" to="/query">
               Query
             </Link>
 
 
 
             {localStorage.getItem('id') === 'SDkaYztRCyNDNoB7AMnDhzyPvF22' ? (
-              <Link className="link" to="/admintable">
+              <Link className="link buzz-out-on-hover" to="/admintable">
                 Admin
               </Link>
             ) : null}
@@ -56,7 +56,7 @@ function Firstnavbar() {
         </Container>
         <span className="span">
           <div className="logout2">
-            <Button className="logout1" onClick={handleLogOut}>
+            <Button className="logout1 buzz-out-on-hover" onClick={handleLogOut}>
               Log out <FontAwesomeIcon icon="fas fa-sign-out-alt" />
             </Button>
           </div>

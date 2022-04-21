@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useAuth } from '../context/AuthContext';
 import ApplicantsForm from './ApplicantsForm';
 import Firstnavbar from './Firstnavbar';
@@ -26,11 +26,24 @@ library.add(
 const Home = () => {
   const { user } = useAuth();
   console.log(user);
+  
+  // const [showHome, setShowHome] = useState(true);
+
+  // useEffect(() => {
+  //  const data = window.localStorage.getItem('no_refresh')
+  //  setShowHome(JSON.parse(data))
+  // }, []);
+
+  // useEffect(() => {
+  //  window.localStorage.setItem('no_refresh', JSON.stringify(showHome))
+  // }, [showHome]);
 
   return (
+    
     <>
       {/* <Particlebackground /> */}
       <Firstnavbar />
+      
       <div className="div5">
         <p>
           <h3>Welcome to Home page</h3>
@@ -64,7 +77,7 @@ const Home = () => {
                 className="buzz-out-on-hover"
                 icon="fa-solid fa-phone"
               />
-              <span className="span2">+91 896547123</span>
+              <span className="span2">+91-896547123</span>
             </div>
             <div className="contact2">
               <FontAwesomeIcon
@@ -78,13 +91,13 @@ const Home = () => {
               <div className="contact2">
                 <a href="https://www.facebook.com/login/" target="_blank">
                   <FontAwesomeIcon
-                    className="fonticon1 buzz-out-on-hover fa-xl social3"
+                    className="fonticon1 buzz-out-on-hover fa-2x social3"
                     icon="fa-brands fa-facebook-square"
                   />
                 </a>
                 <a href="https://twitter.com/i/flow/login" target="_blank">
                   <FontAwesomeIcon
-                    className="fonticon1 buzz-out-on-hover margin-left fa-xl social4"
+                    className="fonticon1 buzz-out-on-hover margin-left fa-2x social4"
                     icon="fa-brands fa-twitter"
                   />
                 </a>
@@ -94,7 +107,7 @@ const Home = () => {
                   target="_blank"
                 >
                   <FontAwesomeIcon
-                    className="fonticon1 buzz-out-on-hover margin-left fa-xl social5"
+                    className="fonticon1 buzz-out-on-hover margin-left fa-2x social5"
                     icon="fa-brands fa-instagram"
                   />
                 </a>
