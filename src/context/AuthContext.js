@@ -13,6 +13,7 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState('');
+  const [pending, setPending] = useState(true);
   function logIn(email, password) {
     // console.log("Email", email);
     return signInWithEmailAndPassword(auth, email, password);
@@ -35,7 +36,8 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       console.log('Auth', currentuser);
-      setUser(currentuser);
+      setUser(currentuser);                                               
+      setPending(false)                                    
       //    console.log(user.uid);
     });
 
@@ -43,6 +45,10 @@ export function AuthProvider({ children }) {
       unsubscribe();
     };
   }, []);
+
+  if(pending){
+    return <>Loading...</>                       
+  }
 
   return (
     <AuthContext.Provider value={{ user, logIn, signUp, logOut, googleSignIn }}>

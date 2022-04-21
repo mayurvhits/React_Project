@@ -31,9 +31,9 @@ function Routes() {
         <ToastContainer position="top-center" />
         <Routess>
           <Route path={'/firstnavabar'} element={<Firstnavbar />}/>
-          <Route  path={'/About'} element={<About />} />
+          <Route  path={'/About'} element={<ProtectedRoute><About /></ProtectedRoute>} />
           <Route  path={'/Applicants'} element={<ApplicantsForm />} />
-          <Route  path={'/query'} element={<Query />} />
+          <Route  path={'/query'} element={<ProtectedRoute><Query /></ProtectedRoute>} />
 
           <Route path={'/agentregistration'} element={<AgentRegistration />} />
           {/* <Route  path={'/admin'} element={AdminLogin} /> */}
@@ -41,16 +41,16 @@ function Routes() {
           {/* {localStorage.getItem('id') === 'RXF5NQCnbjRV4LXQxN2H52fPIAU2' ? 
           <Route  path={'/admintable'} element={<AdminTable />} /> : null} */}
           
-          <Route  path={'/admintable'} element={<AdminTable />} />
-          <Route  path={'/usertable'} element={<UserTable />} />
-          <Route  path={'/querytable'} element={<QueryTable />} />
+          <Route  path={'/admintable'} element={<ProtectedRoute><AdminTable /></ProtectedRoute>} />
+          <Route  path={'/usertable'} element={<ProtectedRoute><UserTable /></ProtectedRoute>} />
+          <Route  path={'/querytable'} element={<ProtectedRoute><QueryTable /></ProtectedRoute>} />
           <Route  path={'/form'} element={<SingleData />} />
           <Route  path={'/addedit'} element={<AddEdit />} />
           <Route  path={'/update/:id'} element={<Update />} />
           <Route  path={'/view/:id'} element={<View />} />
           <Route  path={'/table'} element={<NewTable />} />
-          <Route  path={'/editinfo/:id'} element={<EditInfo />} />
-          <Route  path={'/viewinfo/:id'} element={<ViewInfo />} />
+          <Route  path={'/editinfo/:id'} element={<ProtectedRoute><EditInfo /></ProtectedRoute>} />
+          <Route  path={'/viewinfo/:id'} element={<ProtectedRoute><ViewInfo /></ProtectedRoute>} />
             <Route path={'/home'} element={<ProtectedRoute><Home /></ProtectedRoute>} />
             {/* <Route  path={'/home'} element={Home} /> */}
             <Route  path={'/registration'} element={<UserRegistration />} />
