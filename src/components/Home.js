@@ -51,32 +51,40 @@ const Home = () => {
       <ApplicantsForm />
       <div class="footer-dark ">
         <footer className="footer2">
-          <div className='contact1'>
-            <div className='contact2'>
-              <FontAwesomeIcon className='buzz-out-on-hover' icon="fa-solid fa-location-dot " />
-              <span className='span2'>Ahmedabad, Gujarat</span>
+          <div className="contact1">
+            <div className="contact2">
+              <FontAwesomeIcon
+                className="buzz-out-on-hover"
+                icon="fa-solid fa-location-dot "
+              />
+              <span className="span2">Ahmedabad, Gujarat</span>
             </div>
-            <div className='contact2'> 
-              <FontAwesomeIcon className='buzz-out-on-hover' icon="fa-solid fa-phone" />
-              <span className='span2'>+91 896547123</span>
+            <div className="contact2">
+              <FontAwesomeIcon
+                className="buzz-out-on-hover"
+                icon="fa-solid fa-phone"
+              />
+              <span className="span2">+91 896547123</span>
             </div>
-            <div className='contact2'>
-              <FontAwesomeIcon className='buzz-out-on-hover' icon="fa-solid fa-envelope" />
-              <span className='span2'>mayur@mayur.com</span>
+            <div className="contact2">
+              <FontAwesomeIcon
+                className="buzz-out-on-hover"
+                icon="fa-solid fa-envelope"
+              />
+              <span className="span2">mayur@mayur.com</span>
             </div>
-          </div>
-          <div class="social2">
-            <div class="row">
-              <div class="col item social ">
+            <hr style={{ width: '100%' }} />
+            <div class="contact3 ">
+              <div className="contact2">
                 <a href="https://www.facebook.com/login/" target="_blank">
                   <FontAwesomeIcon
-                    className="fonticon1 buzz-out-on-hover"
+                    className="fonticon1 buzz-out-on-hover fa-xl social3"
                     icon="fa-brands fa-facebook-square"
                   />
                 </a>
                 <a href="https://twitter.com/i/flow/login" target="_blank">
                   <FontAwesomeIcon
-                    className="fonticon1 buzz-out-on-hover"
+                    className="fonticon1 buzz-out-on-hover margin-left fa-xl social4"
                     icon="fa-brands fa-twitter"
                   />
                 </a>
@@ -86,7 +94,7 @@ const Home = () => {
                   target="_blank"
                 >
                   <FontAwesomeIcon
-                    className="fonticon1 buzz-out-on-hover"
+                    className="fonticon1 buzz-out-on-hover margin-left fa-xl social5"
                     icon="fa-brands fa-instagram"
                   />
                 </a>
