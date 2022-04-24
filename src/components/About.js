@@ -11,10 +11,9 @@ const About = () => {
     <div>
       <Firstnavbar/>
       <div className="main">
-        <div className="left">
+        <div className="left1">
           <img className="download" src={profile} alt="Logo" />
-        </div>
-        <div className="right">
+        <div className="right1">
           <div className="aboutus">
             <h4>About us</h4>
             <h3>Welcome to RTO consultancy</h3>
@@ -26,6 +25,7 @@ const About = () => {
               Payment of road tax & all types registration of vehicle
             </p>
           </div>
+        </div>
         </div>
       </div>
     </div>

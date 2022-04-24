@@ -30,7 +30,7 @@ function Firstnavbar() {
         <FontAwesomeIcon className="fa" icon="fa-solid fa-motorcycle" />
         <Container>
           <div className="navlink">
-            <Link className="welcome" to="/home">
+            <Link className="link buzz-out-on-hover" to="/home">
               <h4 className="h11 buzz-out-on-hover">Home</h4>
             </Link>
             <Link className="link buzz-out-on-hover" to="/About">
@@ -52,15 +52,17 @@ function Firstnavbar() {
                 Admin
               </Link>
             ) : null}
-          </div>
-        </Container>
-        <span className="span">
-          <div className="logout2">
+            
+            <div className="link buzz-out-on-hover">
             <Button className="logout1 buzz-out-on-hover" onClick={handleLogOut}>
               Log out <FontAwesomeIcon icon="fas fa-sign-out-alt" />
             </Button>
           </div>
-        </span>
+          </div>
+        </Container>
+        {/* <span className="span"> */}
+          
+        {/* </span> */}
       </Navbar>
     </div>
   );

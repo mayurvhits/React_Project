@@ -21,19 +21,26 @@
   color: white;
   text-decoration: none !important;
   padding: 10px;
+  margin-left: 10px;
 }
+ 
 
 .link:hover{
   color: white !important;
 }
 
 .navlink {
-  width: 500px !important;
+  width: 100% !important;
   align-items: center;
   display: flex;
-  margin-left: 25px;
-  justify-content: space-around !important;
+  flex-wrap: wrap;
+  /* margin-left: 25px; */
+  
+  /* justify-content: space-around !important; */
 }
+ .link:last-child{
+   margin-left: auto;
+ }
 
 Link:hover {
   color: yellow !important;
@@ -104,7 +111,7 @@ Link:hover {
   height: 60px;
 }
 
-.left {
+.left1 {
   /* background-color: yellow; */
   padding: 10px;
   flex: 50%;
@@ -114,11 +121,12 @@ Link:hover {
   align-items: center;
 }
 
-.right {
+.right1 {
   background-color: rgb(234, 237, 240);
   padding: 10px;
   flex: 50%;
   height: 400px;
+  margin-left: 10px;
 }
 
 .main {
@@ -147,11 +155,20 @@ Link:hover {
 .aboutus {
   display: flex;
   flex-direction: column;
-
+  width: auto;
   justify-content: center;
   height: 380px;
 }
 
+/* @media (max-width: 300px) {
+  .aboutus {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    justify-content: center;
+    height: 380px;
+  }
+} */
 .img1 {
   height: 300px;
   width: 400px;
@@ -196,6 +213,13 @@ Link:hover {
 .welcome {
   text-decoration: none !important;
   color: white !important;
+}
+
+@media (max-width: 700px) {
+  .download{
+    width: 400px;
+    height: 450px;
+  }
 }
 
 .welcome1 {
@@ -249,7 +273,7 @@ Link:hover {
 }
 
 .span {
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 
 .hey {
@@ -322,7 +346,7 @@ Link:hover {
   width: 30%;
   display: flex;
   flex-direction: column;
-
+  
   align-content: center;
   margin: 0 auto;
 }
@@ -374,11 +398,16 @@ Link:hover {
 }
 
 .logout1 {
-  width: 100px;
+  /* width: 100px; */
   background-color: #646464 !important;
   border-style: none !important;
+  align-self: flex-end;
+  
   /* color: black !important; */
   /* font-weight: bold !important; */
+}
+logout1:last-child{
+  margin-left: auto;
 }
 
 .tableButton {
@@ -555,7 +584,7 @@ Link:hover {
 }
 
 .google-flex{
- /* display: flex; */
+  /* display: flex; */
  justify-content: space-between;
 }
 
@@ -678,6 +707,7 @@ justify-content: center;
 /* @media (max-width:991px) {
   .footer-dark .item.social {
     text-align:center;
+    
     margin-top:20px;
   }
 } */
@@ -764,4 +794,9 @@ justify-content: center;
 
 .footer .footer2{
   width: 500px;
+}
+
+.download{
+  width: 50%;
+  height: 450px;
 }
